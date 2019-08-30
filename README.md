@@ -1,7 +1,7 @@
-Study for my dev life 
+Study for my dev life :pencil2::green_heart:
 =====
 
-About Commit log
+About Commit log 
 ------
 - [좋은 git commit message를 작성하기 위한 8가지 약속](https://djkeh.github.io/articles/How-to-write-a-git-commit-message-kor/)
 
