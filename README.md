@@ -25,3 +25,10 @@ Python에서 멀티 쓰레드를 동작시키면, (쓰레드가 늘어날수록)
 
 ### 동시성과 병렬성
 
+### Django와 Spring 장/단
+
+### Spring과 Spring Boot 장/단
+
+### vue.js, angular, react 등 FE 관련 프레임워크
+
+### 
