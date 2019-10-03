@@ -32,6 +32,8 @@ Python에서 멀티 쓰레드를 동작시키면, (쓰레드가 늘어날수록)
 ### Django와 Spring 장/단
 
 ### Spring과 Spring Boot 장/단
+Spring -> Spring legacy Project로 현업에서 아직 많이 쓰이고 있다. </br>
+Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고) 실행 및 배포가 간단해짐. </br>
 
 ### vue.js, angular, react 등 FE 관련 프레임워크
 
