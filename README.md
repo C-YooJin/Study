@@ -36,6 +36,7 @@ Spring -> Spring legacy Project로 현업에서 아직 많이 쓰이고 있다. 
 Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고) 실행 및 배포가 간단해짐. </br>
 
 ### vue.js, angular, react 등 FE 관련 프레임워크
+[FE 프레임워크 비교](https://kr.vuejs.org/v2/guide/comparison.html)
 
 ### 객체지향 프로그래밍 (OOP)
 
