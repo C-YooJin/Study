@@ -24,8 +24,16 @@ Python에서 멀티 쓰레드를 동작시키면, (쓰레드가 늘어날수록)
 2. 하드웨어의 발전으로 네트워크 I/O가 프로그램 지연의 대부분을 차지하기 때문이다.
 
 #### Ref.
-[Python GIL](https://medium.com/@mjhans83/python-gil-f940eac0bef9) </br>
-[Python에서의 동시성, 병렬성](https://www.slideshare.net/deview/2d4python) </br>
+- [Python GIL](https://medium.com/@mjhans83/python-gil-f940eac0bef9) </br>
+- [Python에서의 동시성, 병렬성](https://www.slideshare.net/deview/2d4python) </br>
+
+### Celery
+Celery는 메시지 패싱 방식의 분산 비동기 작업 큐다. 작업(Task)은 브로커(Broker)를 통해 메시지(Message)로 워커(Worker)에 전달되어 처리된다. 작업은 멀티프로세싱, eventlet, gevent 를 사용해 하나 혹은 그 이상의 워커에서 동시적으로 실행되며 백그라운드에서 비동기적으로 실행될 수 있다.
+![celery](./Users/user/Documents/image/celery.png)
+
+
+#### Ref.
+- [[번역] 샐러리 입문하기](https://beomi.github.io/2017/03/19/Introduction-to-Celery/)
 
 ### 동시성과 병렬성
 
@@ -44,9 +52,9 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
 
 ### 네트워크
 url이 들어오고 osi 7 계층을 거쳐 서버 전달 -> 유저에게 화면을 띄워주는 것 까지 </br>
-[Computer Network & Web(FE) 면접 정리](https://kadamon.tistory.com/22) </br>
-[기술면접 정리 서버 / 네트워크](https://j2hworld.tistory.com/53) </br>
-[네트워크통신 면접](https://hyeonu1258.github.io/2018/03/10/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%ED%86%B5%EC%8B%A0%20%EB%A9%B4%EC%A0%91/)
+- [Computer Network & Web(FE) 면접 정리](https://kadamon.tistory.com/22) </br>
+- [기술면접 정리 서버 / 네트워크](https://j2hworld.tistory.com/53) </br>
+- [네트워크통신 면접](https://hyeonu1258.github.io/2018/03/10/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%ED%86%B5%EC%8B%A0%20%EB%A9%B4%EC%A0%91/)
 
 ### 운영체제
 
