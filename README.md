@@ -28,12 +28,11 @@ Python에서 멀티 쓰레드를 동작시키면, (쓰레드가 늘어날수록)
 - [Python에서의 동시성, 병렬성](https://www.slideshare.net/deview/2d4python) </br>
 
 ### Celery
-Celery는 메시지 패싱 방식의 분산 비동기 작업 큐다. 작업(Task)은 브로커(Broker)를 통해 메시지(Message)로 워커(Worker)에 전달되어 처리된다. 작업은 멀티프로세싱, eventlet, gevent 를 사용해 하나 혹은 그 이상의 워커에서 동시적으로 실행되며 백그라운드에서 비동기적으로 실행될 수 있다.
-![celery](./Users/user/Documents/image/celery.png)
-
+Celery는 메시지 패싱 방식의 <b>"분산 비동기 작업 큐(Asynchronous task queue/job queue)"</b>다. 작업(Task)은 브로커(Broker)를 통해 메시지(Message)로 워커(Worker)에 전달되어 처리된다. 작업은 멀티프로세싱, eventlet, gevent 를 사용해 하나 혹은 그 이상의 워커에서 동시적으로 실행되며 백그라운드에서 비동기적으로 실행될 수 있다.
 
 #### Ref.
 - [[번역] 샐러리 입문하기](https://beomi.github.io/2017/03/19/Introduction-to-Celery/)
+- [Django + celery + Redis 이용하기](https://whatisthenext.tistory.com/127)
 
 ### 동시성과 병렬성
 
