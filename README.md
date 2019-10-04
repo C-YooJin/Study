@@ -34,29 +34,40 @@ Celery는 메시지 패싱 방식의 <b>"분산 비동기 작업 큐(Asynchronou
 - [[번역] 샐러리 입문하기](https://beomi.github.io/2017/03/19/Introduction-to-Celery/)
 - [Django + celery + Redis 이용하기](https://whatisthenext.tistory.com/127)
 
-### 동시성과 병렬성
+## 동시성과 병렬성
 
-### Django와 Spring 장/단
+## Django와 Spring 장/단
 
-### Spring과 Spring Boot 장/단
+## Spring과 Spring Boot 장/단
 Spring -> Spring legacy Project로 현업에서 아직 많이 쓰이고 있다. </br>
 Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고) 실행 및 배포가 간단해짐. </br>
 
-### vue.js, angular, react 등 FE 관련 프레임워크
+## vue.js, angular, react 등 FE 관련 프레임워크
 [FE 프레임워크 비교](https://kr.vuejs.org/v2/guide/comparison.html)
 
-### 객체지향 프로그래밍 (OOP)
+## 객체지향 프로그래밍 (OOP)
 
-### MVC
+## MVC
 
-### 네트워크
+## 네트워크
 url이 들어오고 osi 7 계층을 거쳐 서버 전달 -> 유저에게 화면을 띄워주는 것 까지 </br>
 - [Computer Network & Web(FE) 면접 정리](https://kadamon.tistory.com/22) </br>
 - [기술면접 정리 서버 / 네트워크](https://j2hworld.tistory.com/53) </br>
 - [네트워크통신 면접](https://hyeonu1258.github.io/2018/03/10/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%ED%86%B5%EC%8B%A0%20%EB%A9%B4%EC%A0%91/)
 
-### 운영체제
+## 운영체제
+### 프로세스 제어 블록 (Process Control Block) / PCP
+PCB란 특정 프로세스에 대한 중요한 정보를 가지고 있는 운영체제의 자료구조이다. </br>
+PID, 프로세스 상태, 프로그램 카운터, CPU 레지스터, CPU 스케줄링 정보, 메모리 관리 정보, 입출력 상태 정보, 어카운팅 정보등을 가지고 있다. </br>
+- 프로세스 식별자(Process ID, PID) : 프로세스 식별번호
+- 프로세스 상태 : new, ready, running, waiting, terminated 등의 상태를 저장
+- 프로그램 카운터 : 프로세스가 다음에 실행할 명령어의 주소
+- CPU 레지스터
+- CPU 스케쥴링 정보 : 프로세스의 우선순위, 스케줄 큐에 대한 포인터 등
+- 메모리 관리 정보 : 페이지 테이블 또는 세그먼트 테이블 등과 같은 정보를 포함
+- 입출력 상태 정보 : 프로세스에 할당된 입출력 장치들과 열린 파일 목록
+- 어카운팅 정보 : 사용된 CPU 시간, 시간제한, 계정번호 등
 
-### 자료구조
+## 자료구조
 
-### 프로세스 간 통신
+## 프로세스 간 통신
