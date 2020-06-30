@@ -12,3 +12,8 @@
 - Kafka Consumer V0.9 이상부터는 offset 정보를 __consumer_offsets 토픽에 pruduce 한다.
 - Burrow
   - [consumer lag monitoring tool](https://blog.voidmainvoid.net/243)
+  - Burrow는 __consumer_offsets 토픽을 consume해서 다양한 정보를 가공 및 저장하고 HTTP로 조회가 가능하도록 만든 프로그램
+  - Burrow에서 <b>consumer module</b>은 __consumer_offsets 토픽을 consume하면서 fetch한 메시지를 storage module을 이용하여 메모리에 저장한다.
+  - <b>storage</b>는 Burrow에서 수집하는 데이터 (Topic/Consumer 정보) 저장/조회 역할을 담당
+  - <b>evaluate</b>는 Consumer Offset/Lag을 지켜보면서 Consumer Group의 상태를 판단하는 역할 
+    - topic/partition 상태를 판단해서 가장 안 좋은 상태가 Consumer Group의 상태가 된다. [ref](https://dol9.tistory.com/273?category=699081)
