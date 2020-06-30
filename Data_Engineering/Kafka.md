@@ -8,4 +8,7 @@
 - 컨슈머 그룹은 하나 이상으 컨슈머로 구성된다. 한 토픽을 소비하기 위해 같은 그룹의 여러 컨슈머가 함께 동작한다. <b>각 컨슈머가 특정 파티션에 대응되는 것을 소유권(ownership)이라고 한다.</b>
 - Broker: 시스템 하드웨어 성능에 따라 다르겠지만, 하나의 브로커는 초당 수천 개의 토픽과 수백만 개의 메시지를 처리할 수 있다.
 - 디스크 기반의 보존: 토픽별로 보존 옵션을 선택할 수 있다. 보존 기간동안 컨슈머가 동작하지 않더라도 메시지는 카프카에 보존되므로 프로듀서의 메시지 백업이 필요 없다. (카프카 핵심 가이드 11p)
-- [Franz Kafka](https://ko.wikipedia.org/wiki/%ED%94%84%EB%9E%80%EC%B8%A0_%EC%B9%B4%ED%94%84%EC%B9%B4)
+- [Franz Kafka](https://ko.wikipedia.org/wiki/%ED%94%84%EB%9E%80%EC%B8%A0_%EC%B9%B4%ED%94%84%EC%B9%B4) : kafka 이름은 작동방식과 전혀 상관이 없다..?
+- Kafka Consumer V0.9 이상부터는 offset 정보를 __consumer_offsets 토픽에 pruduce 한다.
+- Burrow
+  - [consumer lag monitoring tool](https://blog.voidmainvoid.net/243)
