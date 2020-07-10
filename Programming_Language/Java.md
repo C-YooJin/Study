@@ -19,7 +19,7 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   - 특정 규약에 종속되지 않는 자바 객체
   - 스프링 애플리케이션 = POJO를 이용해서 만든 애플리케이션 로직 + POJO가 어떻게 관계를 맺고 동작하는지 정의해놓은 설계정보
   - ![spring](https://user-images.githubusercontent.com/30011635/87107102-df475400-c299-11ea-850e-4a767b3fac6d.png)
-
+  - EJB 등에서 사용되는 Java Bean 이 아닌 Getter 와 Setter 로 구성된 가장 순수한 형태의 기본 클래스를 POJO라 하며, 이는 Spring에서 고안된 철학의 핵심적인 부분을 구성하는 요소로 사용된다
 ## JAVA
 - Encoding & Decoding
   - Encoding: 문자, 기호들을 컴퓨터에 저장하거나 통신에 사용할 목적으로 <b>부호화</b> 하는 것이다. 인코더.
