@@ -1,4 +1,4 @@
-## Spring과 Spring Boot 장/단
+### Spring
 Spring -> Spring legacy Project로 현업에서 아직 많이 쓰이고 있다. </br>
 Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고) 실행 및 배포가 간단
 해짐. </br>
@@ -13,6 +13,14 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   - 느슨한 결합: 객체를 주입받는 다는 것은 외부에서 생성된 객체를 인터페이스를 통해서 넘겨받는 것이다. 이렇게 하면 결합도를 낮출 수 있고, 런타임시에 의존관계가 결정되기 때문에 유연한 구조를 가진다. 
 - JPA Repository
   - [SpringBoot JPA 예제](https://jdm.kr/blog/121)
+- POJO (Plain Old Java Object)
+  - pojo란 평범하고 오래 된 자바 객체라는 뜻이다. 왜 이런 이름이 붙었냐면, 사람들이 EJB(Enterprise Java Bean)만 사용하는 걸 보게 된 마틴 파울러라는 사람이 "평범한 자바 객체를 로직에 넣는 게 더 도움 될 때도 있는데, 사람들은 왜 EJB만 쓸까?"에 대한 생각을 하다가, 평범한 자바 객체는 EJB와 같은 이름이 없어서 라는 생각을 하게 됐다. 그래서 POJO라는 이름을 붙여줬다. 
+  - 스프링도 pojo 프레임워크중 하나라고 볼 수 있다.
+  - 특정 규약에 종속되지 않는 자바 객체
+  - 스프링 애플리케이션 = POJO를 이용해서 만든 애플리케이션 로직 + POJO가 어떻게 관계를 맺고 동작하는지 정의해놓은 설계정보
+  - ![spring](https://user-images.githubusercontent.com/30011635/87107102-df475400-c299-11ea-850e-4a767b3fac6d.png)
+
+## JAVA
 - Encoding & Decoding
   - Encoding: 문자, 기호들을 컴퓨터에 저장하거나 통신에 사용할 목적으로 <b>부호화</b> 하는 것이다. 인코더.
   - Decoding: <b>복호화</b> 인코딩 하기 전으로 되돌리는 처리 방식을 말한다. 디코더.
