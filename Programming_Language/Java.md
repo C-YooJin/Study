@@ -23,11 +23,10 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
 - thymeleaf
   - 템플릿 엔진이다.
   - HTML, XML, JavaScript, CSS 및 일반 텍스트를 처리 할 수 있는 웹 및 독립형 환경에서 사용할 수 있는 Java 템플릿 엔진
-  - 스프링 MVC패턴에서 V(view)를 담당
+  - 스프링 MVC패턴에서 V(view)를 담당 (꼭 뷰를 만들 때만 쓰는 건 아니다)
   - html 파일을 가져와서 파싱, 분석 후 정해진 위치에 데이터를 치환해서 보여준다.
-  - jsp에 비해 속도가 
-
-출처: https://offbyone.tistory.com/410 [쉬고 싶은 개발자]
+  - jsp에 비해 속도가 느림
+  
 ## JAVA
 - Encoding & Decoding
   - Encoding: 문자, 기호들을 컴퓨터에 저장하거나 통신에 사용할 목적으로 <b>부호화</b> 하는 것이다. 인코더.
