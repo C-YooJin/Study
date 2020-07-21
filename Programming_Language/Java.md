@@ -27,6 +27,8 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   - html 파일을 가져와서 파싱, 분석 후 정해진 위치에 데이터를 치환해서 보여준다.
   - jsp에 비해 속도가 느림
 - `mvn package` : 패키징. jar를 만들어준다. 컴파일 된 결과물을 패키지 파일로 생성. 컴파일, 테스트, 빌드를 수행하여 패키지 파일을 생성. 
+- MVC 패턴 (Model, View, Controller)
+  - controller: Model과 View를 연결해주는 역할. springframework.ui.Model 라이브러리로 Model 설정해줌
   
 ## JAVA
 - Encoding & Decoding
