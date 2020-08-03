@@ -30,7 +30,7 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
 - MVC 패턴 (Model, View, Controller)
   - controller: Model과 View를 연결해주는 역할. springframework.ui.Model 라이브러리로 Model 설정해줌
 ### Test Code (TDD)
-테스트코드의 다섯가지 
+테스트코드의 다섯가지 원칙
 - F - Fast (테스트 코드를 실행하는 일은 오래 걸리면 안 된다.)
 - I - Independent (독립적으로 실행이 되어야 한다.)
 - R - Repeatable (반복 가능해야 한다.)
