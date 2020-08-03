@@ -29,6 +29,8 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
 - `mvn package` : 패키징. jar를 만들어준다. 컴파일 된 결과물을 패키지 파일로 생성. 컴파일, 테스트, 빌드를 수행하여 패키지 파일을 생성. 
 - MVC 패턴 (Model, View, Controller)
   - controller: Model과 View를 연결해주는 역할. springframework.ui.Model 라이브러리로 Model 설정해줌
+- IoC (Inversion of Control)
+  - "내가 사용할 의존성 누군가 알아서 주겠지" -백기선님 유튜브 스프링 부트 입문 
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
 - F - Fast (테스트 코드를 실행하는 일은 오래 걸리면 안 된다.)
