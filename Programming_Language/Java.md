@@ -39,7 +39,7 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   
   // 일반 객체
   OwnerController ownerController = new OwnerController();
-  // bean으로 주입 받은 객체
+  // bean으로 주입 받은 객체. new로 해서 인스턴스를 생성해줄 필요가 없음. bean에 있는 걸 가져다 쓴다.
   OwnerController bean = applicationContext.getBean(OwnerController.class);
   ```
 ### Test Code (TDD)
