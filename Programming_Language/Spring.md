@@ -85,6 +85,14 @@ public class VizConfig {
 ```
 이런식으로. 그러니까 이게 뭐냐면. Configuration 파일에서 지금 Controller를 bean에 등록해줬기 때문에, VizController 클래스 위에 @Controller 붙여주지 않아도 된다는 말이다. 이 코드로인해 이미 Controller로 bean에 등록 됐기 때문에.
 
+#### 등록 된 bean을 어떻게 꺼내 쓰지?
+<b> :heavy_check_mark: 1. Application Context 사용해서 꺼내기</b> <br>
+<b> :heavy_check_mark: 2. @Autowired 어노테이션으로 꺼내기</b> <br>
+  - 생성자를 통해서 직접 주입받는 것이 아니라, autowired라는 어노테이션으로 IoC 컨테이너에 등록된 bean을 주입 받아 사용할 수 있다.
+  - Application Context로 직접 꺼내는 것 보다는 스프링이 제공하는 Dependency Injection 하는 방법. 즉, Autowired를 활용하는 경우가 많다. 
+
+
+
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
 - F - Fast (테스트 코드를 실행하는 일은 오래 걸리면 안 된다.)
