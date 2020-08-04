@@ -83,7 +83,7 @@ public class VizConfig {
     }
 }
 ```
-이런식으로. 
+이런식으로. 그러니까 이게 뭐냐면. Configuration 파일에서 지금 Controller를 bean에 등록해줬기 때문에, VizController 클래스 위에 @Controller 붙여주지 않아도 된다는 말이다. 이 코드로인해 이미 Controller로 bean에 등록 됐기 때문에.
 
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
