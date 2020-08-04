@@ -30,7 +30,18 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
 - MVC 패턴 (Model, View, Controller)
   - controller: Model과 View를 연결해주는 역할. springframework.ui.Model 라이브러리로 Model 설정해줌
 - IoC (Inversion of Control)
-  - "내가 사용할 의존성 누군가 알아서 주겠지" -백기선님 유튜브 스프링 부트 입문 
+  - "내가 사용할 의존성 누군가 알아서 주겠지" -백기선님 유튜브 스프링 부트 입문
+  - IoC 컨테이너는 Application Context나 Bean Factory 같은 걸 사용하면 되는데 Application Context를 사용하면 된다. 그 이유는 Application Context가 Bean factory를 상속받고 있고, 다른 것들도 상속받고 있기 때문에 다양한 구현이 가능하기 때문이다.
+- 일반 객체와 Bean
+  - Bean: 객체인데 IoC 컨테이너가 관리하는 객체
+  ```
+  // 둘 다 같은 OwnerController
+  
+  // 일반 객체
+  OwnerController ownerController = new OwnerController();
+  // bean으로 주입 받은 객체
+  OwnerController bean = applicationContext.getBean(OwnerController.class);
+  ```
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
 - F - Fast (테스트 코드를 실행하는 일은 오래 걸리면 안 된다.)
