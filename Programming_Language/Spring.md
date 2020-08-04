@@ -29,7 +29,7 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
 - `mvn package` : 패키징. jar를 만들어준다. 컴파일 된 결과물을 패키지 파일로 생성. 컴파일, 테스트, 빌드를 수행하여 패키지 파일을 생성. 
 - MVC 패턴 (Model, View, Controller)
   - controller: Model과 View를 연결해주는 역할. springframework.ui.Model 라이브러리로 Model 설정해줌
-- IoC (Inversion of Control)
+### IoC (Inversion of Control)
   - "내가 사용할 의존성 누군가 알아서 주겠지" -백기선님 유튜브 스프링 부트 입문
   - IoC 컨테이너는 Application Context나 Bean Factory 같은 걸 사용하면 되는데 Application Context를 사용하면 된다. 그 이유는 Application Context가 Bean factory를 상속받고 있고, 다른 것들도 상속받고 있기 때문에 다양한 구현이 가능하기 때문이다.
 - 일반 객체와 Bean
@@ -90,7 +90,16 @@ public class VizConfig {
 <b> :heavy_check_mark: 2. @Autowired 어노테이션으로 꺼내기</b> <br>
   - 생성자를 통해서 직접 주입받는 것이 아니라, autowired라는 어노테이션으로 IoC 컨테이너에 등록된 bean을 주입 받아 사용할 수 있다.
   - Application Context로 직접 꺼내는 것 보다는 스프링이 제공하는 Dependency Injection 하는 방법. 즉, Autowired를 활용하는 경우가 많다. 
-
+  - spring version 4.3부터 Autowired 생략 가능
+  
+### AOP (Aspect Oriented Programming) 
+- 똑같은 코드인데 흩어져있는 코드들. 이걸 바꾸려면 일일이 찾아가서 바꿔줘야 되는 문제가 있음. 
+- @Transactional 어노테이션
+- AOP 구현 방법 <br>
+:heavy_check_mark: 컴파일<br>
+:heavy_check_mark: 바이트코드 조작<br>
+:heavy_check_mark: 프록시 패턴<br>
+프록시 패턴과 관련된 건 다음 시간에 ...
 
 
 ### Test Code (TDD)
