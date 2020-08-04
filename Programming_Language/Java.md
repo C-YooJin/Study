@@ -42,6 +42,49 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   // bean으로 주입 받은 객체. new로 해서 인스턴스를 생성해줄 필요가 없음. bean에 있는 걸 가져다 쓴다.
   OwnerController bean = applicationContext.getBean(OwnerController.class);
   ```
+#### 어떻게 스프링 컨테이너 안에다가 bean을 만들어줄까?
+#### 어떻게 어떤 특정한 instance를 bean으로 만들 수 있을까?
+크게 두 가지 방법 있음
+1. Component Scan
+
+어노테이션 프로세서 중 스프링 ioc 컨테이너가 사용하는 여러가지 인터페이스가 있는데, 그런 인터페이스를 life cycle call back라고 부름. 여러가지 life cycle call back 중에, component 어노테이션을 찾아서, 즉 @Component가 붙어 있는 모든 class를 찾아서, 그 class에 있는 인스턴스를 bean으로 등록함.
+```
+@Component Scanning
+	@Repository
+	@Service
+	@Controller
+	@Configuration
+```
+등등 더 있음.. 직접 정의할 수도 있고. 이런 어노테이션들을 찾아서 bean으로 등록 해주는게 component scanning이다.
+
+예를 더 들어보자면
+
+```
+@Controller
+class OwnerController {
+
+	...
+}
+```
+이렇게 Controller 어노테이션을 붙여주면 <b>자동으로 bean으로 등록</b> 되는 것이다.
+
+repository는 spring data jpa가 제공해주는 기능에 의해서 자동으로 bean으로 등록된다. 따라서 특정한 어노테이션을 붙이지 않아도 된다.
+
+2. 직접 xml이나 '자바설정파일'에 bean으로 등록하는 방법. 요즘 추세는 자바설정파일을 많이 씀.
+VizConfig.java 파일 만들어서, 어떤 class위에 @Configuration이라는 어노테이션을 붙여주고, 그 안에 @Bean이라는 어노테이션을 붙여줌
+
+```
+@Configuration
+public class VizConfig {
+    
+    @Bean
+    public VizController vizController() {
+        return new VizController();
+    }
+}
+```
+이런식으로. 
+
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
 - F - Fast (테스트 코드를 실행하는 일은 오래 걸리면 안 된다.)
