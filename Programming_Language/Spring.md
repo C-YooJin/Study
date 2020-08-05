@@ -91,7 +91,11 @@ public class VizConfig {
   - 생성자를 통해서 직접 주입받는 것이 아니라, autowired라는 어노테이션으로 IoC 컨테이너에 등록된 bean을 주입 받아 사용할 수 있다.
   - Application Context로 직접 꺼내는 것 보다는 스프링이 제공하는 Dependency Injection 하는 방법. 즉, Autowired를 활용하는 경우가 많다. 
   - spring version 4.3부터 Autowired 생략 가능
-  
+  - Autowired는 생성자, 메소드, 멤버변수 위에 사용할 수 있다. 대부분은 멤버변수 위에 선언하여 사용한다.
+  - 스프링 컨테이너는 멤버변수 위에 붙은 Autowired를 확인하는 순간 해당 변수의 타입을 체크한다. 그리고 그 타입의 객체가 메모리에 존재하는지를 확인한 후에, 그 객체를 변수에 주입한다.
+  - 그런데 만약 @Autowired가 붙은 객체가 메모리에 없다면 컨테이너가 `NoSuchBeanDefinitionException`을 발생시킨다. 
+  ![image](https://user-images.githubusercontent.com/30011635/89385247-47267880-d73a-11ea-9ce1-2f3dfaf45461.png)
+
 ### AOP (Aspect Oriented Programming) 
 - 똑같은 코드인데 흩어져있는 코드들. 이걸 바꾸려면 일일이 찾아가서 바꿔줘야 되는 문제가 있음. 
 - @Transactional 어노테이션
