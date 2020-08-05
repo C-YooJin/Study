@@ -109,6 +109,17 @@ public class VizConfig {
 :boom:get/set = DTO<br>
 :boom:get = VO
 
+### getter와 setter의 차이
+ref. [getter와 setter 비유 굿](https://m.blog.naver.com/PostView.nhn?blogId=mdown&logNo=221315912263&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- getter: 데이터에 접근해서 가져오는 거
+- setter: 데이터를 수정하는 것!
+객체에 접근할 때, 원하는 데이터를 변수에 가지고 있는 클래스에 접근하고 싶을 때, 패키지가 다르면 접근이 불가능하다. 변수를 class.method()로 가져올 수 없다. 이런 경우 get메소드를 만들어서 해당 변수를 return 해주면 된다. B클래스가 A클래스에 있는 변수 title을 사용하고 싶다면 A클래스에 아래와 같이 getTitle 메소드를 만든다.
+```
+public String getTitle(){
+	return title;
+}
+```
+
 
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
