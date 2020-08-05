@@ -105,6 +105,10 @@ public class VizConfig {
 :heavy_check_mark: 프록시 패턴<br>
 프록시 패턴과 관련된 건 다음 시간에 ...
 
+### DTO와 VO를 구분할 수 있는 아주 좋은 형태
+:boom:get/set = DTO<br>
+:boom:get = VO
+
 
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
