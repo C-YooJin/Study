@@ -119,7 +119,29 @@ public String getTitle(){
 	return title;
 }
 ```
+- Entity 클래스에는 setter를 절대 쓰면 안 된다. builder로 데이터를 생성해주자.
+```
+// 객체의 생성자 설정 (필드가 많을경우 롬복의 @Builder 사용하면 좋다)
+@Builder
+public Member(String username, String password, String name, String tel, Address address) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.tel = tel;
+        this.address = address;
+    }
+```
 
+```
+// 객체 생성 시 값 세팅(빌더패턴 사용)
+Member member = Member.Builder()
+      .username("name")
+      .password("1234")
+      .name("name);
+      .tel("01012345677")
+      .address(address)
+      .build();
+```
 
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
