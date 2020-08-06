@@ -11,8 +11,24 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
 - DI(Dependency Injection) 의존관계 주입
   - 강한 결합: 객체 내부에서 다른 객체를 생성하는 것은 강한 결합도를 가지는 구조다. A클래스 내부에서 B라는 객체를 생성하고 있다면, B 객체를 C객체로 바꾸고 싶은 경우 A클래스도 수정해줘야 한다.
   - 느슨한 결합: 객체를 주입받는 다는 것은 외부에서 생성된 객체를 인터페이스를 통해서 넘겨받는 것이다. 이렇게 하면 결합도를 낮출 수 있고, 런타임시에 의존관계가 결정되기 때문에 유연한 구조를 가진다. 
+
+### JPA
 - JPA Repository
   - [SpringBoot JPA 예제](https://jdm.kr/blog/121)
+- JPA는 자바 객체와 데이터를 맵핑시켜준다. Entity class 활용.
+- Entity class
+  - JPA의 Entity class는 데이터베이스에 저장하기 위해 유저가 정의한 class다.
+  - DB와 자바객체를 맵핑해준다.
+  - Annotation
+    - :heavy_check_mark:@Entity: @Entity가 설정된 클래스를 엔티티 클래스라고 하며, @Entity가 붙은 클래스는 테이블과 매핑된다.
+    - :heavy_check_mark:@Table: 엔티티와 관련된 테이블을 매핑한다. name속성을 사용하여 테이블과 매핑하는데, name을 생략하면 클래스 이름이 테이블 이름과 매핑된다. 다시 설명하자면 `@Table(name = "XXX")` 같은 형식으로 작성하면 이름을 다르게 해서 매핑이 가능하다는 것이다.
+    - :heavy_check_mark:@Id: Entity 클래스의 필수 어노테이션이다. <b>이게 없는 엔티티 클래스는 JPA가 처리하지 못한다.</b> 일반적으로 키(primary key)를 가지는 변수에 선언한다.
+    - :heavy_check_mark:@GeneratedValue: @Id가 선언된 필드에 기본 키를 자동으로 생성하여 할당할 때 사용한다. 다양한 옵션이 있지만 이걸 사용하면 데이터베이스에 따라서 자동으로 결정 된다. H2는 시퀀스를 이용하여 처리한다.
+    - :heavy_check_mark:@Temporal: 날짜 타입의 변수에 선언하여 날짜 타입을 매핑할 때 사용한다. TemporalType의 DATE, TIME, TIMESTAMP중 하나를 선택할 수 있다.
+    - :heavy_check_mark:@Column: @Column선언은 꼭 필요한 것은 아니다. 하지만, @Column에서 지정한 멤버 변수와 데이터베이스의 컬럼명을 다르게 하고 싶다면 `@Column(name="XXX")`같은 형식으로 작성하자. 디폴트는 기본적으로 멤버 변수명과 일치하는 데이터베이스의 컬럼을 매핑한다. 
+    
+  
+### POJO
 - POJO (Plain Old Java Object)
   - pojo란 평범하고 오래 된 자바 객체라는 뜻이다. 왜 이런 이름이 붙었냐면, 사람들이 EJB(Enterprise Java Bean)만 사용하는 걸 보게 된 마틴 파울러라는 사람이 "평범한 자바 객체를 로직에 넣는 게 더 도움 될 때도 있는데, 사람들은 왜 EJB만 쓸까?"에 대한 생각을 하다가, 평범한 자바 객체는 EJB와 같은 이름이 없어서 라는 생각을 하게 됐다. 그래서 POJO라는 이름을 붙여줬다. 
   - 스프링도 pojo 프레임워크중 하나라고 볼 수 있다.
@@ -20,6 +36,8 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   - 스프링 애플리케이션 = POJO를 이용해서 만든 애플리케이션 로직 + POJO가 어떻게 관계를 맺고 동작하는지 정의해놓은 설계정보
   - ![spring](https://user-images.githubusercontent.com/30011635/87107102-df475400-c299-11ea-850e-4a767b3fac6d.png)
   - EJB 등에서 사용되는 Java Bean 이 아닌 Getter 와 Setter 로 구성된 가장 순수한 형태의 기본 클래스를 POJO라 하며, 이는 Spring에서 고안된 철학의 핵심적인 부분을 구성하는 요소로 사용된다
+
+### Templates
 - thymeleaf
   - 템플릿 엔진이다.
   - HTML, XML, JavaScript, CSS 및 일반 텍스트를 처리 할 수 있는 웹 및 독립형 환경에서 사용할 수 있는 Java 템플릿 엔진
