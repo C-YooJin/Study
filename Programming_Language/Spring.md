@@ -26,6 +26,8 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
     - :heavy_check_mark:@GeneratedValue: @Id가 선언된 필드에 기본 키를 자동으로 생성하여 할당할 때 사용한다. 다양한 옵션이 있지만 이걸 사용하면 데이터베이스에 따라서 자동으로 결정 된다. H2는 시퀀스를 이용하여 처리한다.
     - :heavy_check_mark:@Temporal: 날짜 타입의 변수에 선언하여 날짜 타입을 매핑할 때 사용한다. TemporalType의 DATE, TIME, TIMESTAMP중 하나를 선택할 수 있다.
     - :heavy_check_mark:@Column: @Column선언은 꼭 필요한 것은 아니다. 하지만, @Column에서 지정한 멤버 변수와 데이터베이스의 컬럼명을 다르게 하고 싶다면 `@Column(name="XXX")`같은 형식으로 작성하자. 디폴트는 기본적으로 멤버 변수명과 일치하는 데이터베이스의 컬럼을 매핑한다. 
+  - ref. 갓대희님 티스토리: [스프링부트 (3)] SpringMVC(2) Spring Boot View 설정 및 JSP 연동하기(Thymeleaf 추가)(https://goddaehee.tistory.com/204)
+  - ref. JDM's blog: [스프링부트 JPA예제](https://jdm.kr/blog/121)
     
   
 ### POJO
