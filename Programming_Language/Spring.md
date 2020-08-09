@@ -140,7 +140,7 @@ public String getTitle(){
 }
 ```
 - Entity 클래스에는 setter를 절대 쓰면 안 된다. builder로 데이터를 생성해주자.
-- <b>엔티티 클래스는 Domain 영역에 들어간다. </b>
+- <font color = "red"> <b>엔티티 클래스는 Domain 영역에 들어간다. </b> </font>
 
 ```
 // 객체의 생성자 설정 (필드가 많을경우 롬복의 @Builder 사용하면 좋다)
