@@ -23,3 +23,21 @@ Celery는 메시지 패싱 방식의 <b>"분산 비동기 작업 큐(Asynchronou
 - [[번역] 샐러리 입문하기](https://beomi.github.io/2017/03/19/Introduction-to-Celery/)
 - [Django + celery + Redis 이용하기](https://whatisthenext.tistory.com/127)
 >
+
+### Python의 Linked List
+- Array List와 다르게 엘리먼트간의 관계를 '연결'로 표현한 것
+- 파이썬은 list기본 자료형에 Linked List가 포함 돼 있다.
+- array list에서는 엘리먼트라는 이름을 사용했지만 linked list와 같이 연결된 엘리먼트들은 노드(node, 마디, 교점의 의미) 혹은 버텍스(vertex, 정점, 꼭지점의 의미)라고 부른다.
+![image](https://user-images.githubusercontent.com/30011635/89723713-d2528780-da34-11ea-9d63-a53d7e284495.png)
+- 노드는 '자료'와 다음 노드를 가리키는 '참조값'으로 구성 돼 있다.
+```
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+```
+- 메소드
+  - `.append()` : 맨 뒤에 노드 추가 (insert)
+  - `.first()` : 맨 앞의 노드 검색 (search)
+  - `.next()` : 다음 노트 검색 (search)
+  - `.delete()` : 현재 노드의 삭제 (delete)
