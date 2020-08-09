@@ -41,3 +41,4 @@ class Node:
   - `.first()` : 맨 앞의 노드 검색 (search)
   - `.next()` : 다음 노트 검색 (search)
   - `.delete()` : 현재 노드의 삭제 (delete)
+- `next`의 기본 값은 `NULL`이 아니라 `None`이다.
