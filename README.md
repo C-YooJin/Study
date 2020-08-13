@@ -3,6 +3,8 @@
 - [Operating System](https://github.com/C-YooJin/Study/tree/master/Operating_System)
   - Operating System
   - Linux
+- [Data Analysis](https://github.com/C-YooJin/Study/tree/master/Data_Analysis)
+  - Statistic
 - [Network](https://github.com/C-YooJin/Study/tree/master/Network)
   - Network
 - [Data Structure](https://github.com/C-YooJin/Study/tree/master/Data_Structure)
