@@ -44,3 +44,13 @@ Failover Time | 0초 | 30 - 300초
 어플리케이션 | 제한적 | 대부분 범용제품
 운영체제 | 전용OS | 범용OS
 하드웨어 | 전용 하드웨어 | 범용 
+
+### Netty
+- Netty는 TCP, UDP소켓 서버 개발과 같은 네트워크 프로그래밍을 지원한다. (간단하고 쉽게)
+- 모든 방식이 Channel, ChannelPipeline, ChannelHandler 인터페이스를 기준의로 정의된다.
+- 네티가 제공하는 전송
+  - NIO: 논블로킹 입출력. selector기반 방식.
+  - Epoll: 논블로킹 입출력. 리눅스에서만 이용한다. NIO 전송보다 빠르고 안전한 논블로킹.
+  - OIO: 블로킹 스트림 이용
+  - 로컬(Local): VM에서 파이프를 통해 통신하는 데 이용
+  - 임베디드(Embedded): 실제 네트워크 기반 전송 없이 ChannelHandler를 이용할 수 있게 해줌. ChannelHandler 구현을 테스트 하는 데 유용.
