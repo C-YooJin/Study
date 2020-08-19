@@ -43,3 +43,8 @@
 
 ### slf4j
 - 자바의 로깅 관련 모듈.
+
+### `private volatile string test = test;`
+- java volatile 키워드는 java 변수를 Main Memory에 저장하겠다고 명시하는 것이다.
+- 변수를 read 할 때, CPU cache에 저장 된 값이 아닌 Main Memory에서 읽는 것이다.
+- write 할 때도 마찬가지로 Main Memory에 작성한다. 
