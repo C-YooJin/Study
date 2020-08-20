@@ -52,4 +52,17 @@
 #### 어떨 때 쓸까?
 - Multi Thread환경에서 Thread가 변수 값을 읽어올 때 각각의 CPU cache에 저장된 값이 다르기 때문에 <b>변수 값 불일치</b>가 일어난다. 예를 들어, a라는 변수에 대해 한 쓰레드에서는 값을 읽고 더하고, 한 쓰레드에 대해서는 a를 읽기만 할 때 문제가 발생한다. 앞 쓰레드에서는 a값의 변형이 일어나지만(cache메모리로 가져와서 작업한다), 뒷 쓰레드는 변형되기 전(Main Memory에 있는) a값을 가져오기 때문이다. 이런 경우 변수 a에 대해 Main Memory에서 직접 read & write 한다면 문제 없다. 
 - `volatile`이 가장 적합한 상황: 멀티쓰레드 환경에서 한 쓰레드는 read & write 하고, 나머지는 read만 하는 경우
-- 여러 쓰레드에서 write를 하는 경우에는 적합하지 않다. 연산 후 main memory에 반영되기 전 다른 쓰레드에서 read 하고 write 해버린다면 값의 오차가 생긴다. 자세한 건 위 ref 블로그 참고. 
+- 여러 쓰레드에서 write를 하는 경우에는 적합하지 않다. 연산 후 main memory에 반영되기 전 다른 쓰레드에서 read 하고 write 해버린다면 값의 오차가 생긴다. 자세한 건 위 ref 블로그 참고.
+
+### enum 열거형 (JDK 1.5 up)
+- 클래스처럼 보이게 하는 상수
+- 서로 관련 있는 상수들을 모아 심볼릭한 명칭의 집합
+- Enum클래스형을 기반으로 한 클래스형 선언
+```
+<EnumExample.java>
+public emun Example {
+  WALKING, RUNNING, TAEKONDO
+}
+```
+- 값들은 대문자로 적어준다.
+
