@@ -66,3 +66,35 @@ public emun Example {
 ```
 - 값들은 대문자로 적어준다.
 
+### extends (상속)
+- 사실 extends가 상속의 대표적인 형태다.
+- 부모의 메소드를 그대로 사용할 수 있으며 오버라이딩 할 필요 없이 부모에 구현되있는 것을 직접 사용 가능하다.
+```
+class Vehicle {
+  protected int speed = 3;
+  
+  public int getSpeed(){
+    return speed;
+  }
+  public void setSpeed(int speed){
+    this.speed = speed;
+  }
+}
+
+class Car extends Vehicle{
+  public void printspd(){
+    System.out.println(speed);
+  }
+}
+
+public class ExtendsSample {
+  public static main (String[] args){
+    Car A = new Car();
+    System.out.println(A.getSpeed());
+    A.printspd();
+  }
+}
+```
+car 클래스는 Vehicle을 상속 받았다.
+
+### implements (상속)
