@@ -98,3 +98,34 @@ public class ExtendsSample {
 car 클래스는 Vehicle을 상속 받았다.
 
 ### implements (상속)
+- 자바는 다중 상속을 지원하지 않는다. `public class Son extends Father, Mother{...}` 이것이 불가능 하다는 것이다.
+- 근데 implements는 다중 상속을 가능하게 해 줌. 일단 아래부터 보자.
+```
+interface TestInterface{
+  public static int num = 8;
+  public void fun1();
+  public void fun2();
+}
+
+class InterfaceExam implements TestInterface{
+  @Override
+  public void fun1(){
+    System.out.println(num);
+  }
+  
+  @Override
+  public void fun2() {
+    
+  }
+}
+
+public class InterfaceSample{
+  public static void main(String args[]){
+    InterfaceExam exam = new InterfaceExam();
+    exam.fun1();
+  }
+}
+```
+#### implements의 가장 큰 특징은 이렇게 부모의 메소드를 반드시 오버라이딩(재정의)해야 한다.
+- 그리고 `public class Son implements Father, Mother{...}`를 가능하게 해준다. extends에서는 다중 상속이 안 돼서 요게 안 됨.
+
