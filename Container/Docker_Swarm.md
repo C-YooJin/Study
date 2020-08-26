@@ -29,3 +29,9 @@ ref. [Docker Swarm을 이용한 쉽고 빠른 분산 서버 관리](https://subi
 
 ### Docker compose
 - 도커 애플리케이션 개발 할 때 docker compose.yml 파일로 
+
+### Docker
+- 도커 파일 = 서버 운영 기록 코드화
+- 도커 이미지 = 도커 파일 + 실행 시점
+
+Ref. [왜 굳이 도커(컨테이너)를 써야 하나요?](https://www.44bits.io/ko/post/why-should-i-use-docker-container)
