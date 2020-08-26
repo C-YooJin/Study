@@ -27,3 +27,5 @@ ref. [Docker Swarm을 이용한 쉽고 빠른 분산 서버 관리](https://subi
 - 테스크
   - 컨테이너 배포 단위. 하나의 서비스는 여러개의 테스크를 실행할 수 있음. 
 
+### Docker compose
+- 도커 애플리케이션 개발 할 때 docker compose.yml 파일로 
