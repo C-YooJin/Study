@@ -48,7 +48,7 @@
  ```
  
 사용법은 아래
-1.1 Convert Java object to JSON, writeValue(...)
+####1.1 Convert Java object to JSON, writeValue(...)
 ```
 ObjectMapper mapper = new ObjectMapper();
 User user = new User();
@@ -56,11 +56,11 @@ User user = new User();
 //Object to JSON in file 
 mapper.writeValue(new File("c:\\user.json"), user); 
 
-//Object to JSON in 
-String String jsonInString = mapper.writeValueAsString(user);
+//Object to JSON in String 
+String jsonInString = mapper.writeValueAsString(user);
 ```
 
-1.2 Convert JSON to Java object, readValue(...)
+####1.2 Convert JSON to Java object, readValue(...)
 ```
 ObjectMapper mapper = new ObjectMapper(); 
 String jsonInString = "{'name' : 'mkyong'}"; 
