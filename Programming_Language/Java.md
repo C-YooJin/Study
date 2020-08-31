@@ -193,3 +193,17 @@ A. 쓰레드의 main메소드가 run메소드다. start 메소드를 호출한�
 Q. 정확히 무얼 가르켜 쓰레드라 하는가?<br>
 A. 별도의 실행흐름(쓰레드)를 형성하기 위해서 자바 가상머신에 의해 만들어지는 (또는 준비되는) 모든 리소스와 각종 정보들을 총칭해서 쓰레드라 한다. 
   - 참고로, 쓰레드를 생성하기 위해서는 '메모리 할당', 'CPU를 나눠쓰기 위한 각종 정보 등록' 등의 작업들이 필요하다. 이것들 또한 쓰레드라는 것..
+  
+  
+### ArrayBlockingQueue
+- Array로 구현 된 Blocking Queue다. 추가되는 아이템은 순서가 있으며, FIFO를 따른다.
+- queue에 담을 수 있는 아이템의 갯수가 한정 된다.
+- Queue에서 아이템을 가져올 때 비어있으면 null을 리턴하지 않고, Queue에 아이템이 채워질 때 까지 기다린다.
+- 아이템을 추가할 때 Queue가 꽉 차 있으면 공간이 생길 때 까지 기다린다.
+- Exception이 발생하거나 일정 시간 기다릴 수 있음
+- 멀티 쓰레드 환경에서 사용하기 위해 구현 됐다.
+- 사용방법
+```
+int capacity = 10;
+ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(capacity);
+```
