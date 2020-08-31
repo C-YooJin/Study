@@ -36,6 +36,42 @@
  ### Jackson 라이브러리
  java object를 JSON으로 변환하거나 JSON을 java object로 변환하는 데 사용하는 java 라이브러리
  
+ ### ObjectMapper() 
+ JSON파일이나 JSON형식으로 된 string을 파싱하는 역할을 한다.
+ ```
+ # pom.xml
+ <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.11.0.rc1</version>
+ </dependency>
+ ```
+ 
+사용법은 아래
+1.1 Convert Java object to JSON, writeValue(...)
+```
+ObjectMapper mapper = new ObjectMapper();
+User user = new User();
+
+//Object to JSON in file 
+mapper.writeValue(new File("c:\\user.json"), user); 
+
+//Object to JSON in 
+String String jsonInString = mapper.writeValueAsString(user);
+```
+
+1.2 Convert JSON to Java object, readValue(...)
+```
+ObjectMapper mapper = new ObjectMapper(); 
+String jsonInString = "{'name' : 'mkyong'}"; 
+
+//JSON from file to Object 
+User user = mapper.readValue(new File("c:\\user.json"), User.class); 
+
+//JSON from String to Object 
+User user = mapper.readValue(jsonInString, User.class);
+```
+ 
  ### HikariCp
  - Database와 Connection Pool을 관리해준다.
  - 실제로 JDBC 커넥션을 맺는 과정은 상당히 복잡하고 자원을 많이 소모한다. 부하도 심하고.. -> hikaricp를 사용하면 미리 정해놓은 만큼에 커넥션을 pool에 담아두고, 요청이 들어오면 Thread가 커넥션을 요청하고, Hikari는 pool내에 있는 커넥션을 연결해준다. 그러면 Thread입장에서는 바로 쿼리를 날릴 수 있게 된다. 
