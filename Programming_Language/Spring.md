@@ -171,4 +171,75 @@ Member member = Member.Builder()
 - I - Independent (독립적으로 실행이 되어야 한다.)
 - R - Repeatable (반복 가능해야 한다.)
 - S - Self Validating (매뉴얼 없이 테스트 코드만 실행해도 성공, 실패 여부를 알 수 있어야 한다.)
-- T - Timely (바로 사용 가능해야 한다.)
+- T - Timely (바로 사용 가능해야 한다.) <br>
+<font color="red"> Junit, given-when-then 패턴으로 먼저 공부, 각 레이어에 대한 유닛테스트와 전체 api에 대한 인테그레이션 테스트 (http test) 공부 방법으로 </font>
+
+### JPA auditing 
+중복 되는 코드를 좀 더 효율적으로 짜도록 도와준다. 특히 게시물 수정 시간 같은 것..!
+
+```
+// 테스트 코드
+@Test
+    public void BaseTimeEntity_등록 () {
+        // given
+        LocalDateTime now = LocalDateTime.of(2020, 9, 04, 21, 56, 00);
+        postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+```
+
+```
+// BaseTimeEntity 코드
+package com.deepjin.book.springboot.domain.posts;
+
+import lombok.Getter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
+import java.time.LocalDateTime;
+
+@Getter
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public abstract class BaseTimeEntity {
+
+    @CreatedDate
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
+}
+
+```
+
+```
+// Application.java에 annotation 추가
+package com.deepjin.book.springboot.domain.posts;
+
+import lombok.Getter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
+import java.time.LocalDateTime;
+
+@Getter
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public abstract class BaseTimeEntity {
+
+    @CreatedDate
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
+}
+
+```
