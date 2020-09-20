@@ -26,3 +26,11 @@ $.ajax({
 	}
 });
 ```
+#### JSON.stringify() : json객체를 string 객체로 변환
+- ajax의 data안에 사용한다
+- 원본 `param -> {name:"yoojin", age: "1234"}`
+- JSON.stringify() 적용 후 `param -> {"name":"yoojin", "age":"1234"}`
+#### JSON.parse() : string객체를 json 객체로 변환
+- success단에서 사용함
+- `JSON.parse(param)`
+- 결과 `{name:"yoojin", age: 1234}`
