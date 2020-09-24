@@ -251,3 +251,6 @@ public abstract class BaseTimeEntity {
 - 클라이언트 템플릿 엔진
   - 음, 이건. vue.js, React.js 처럼 자바스크립트로 된 프레임워크들로 뷰를 표현할 때. 자바스크립트는 브라우저 위에서 작동한다. 코드가 이미 서버 사이드를 떠나서 브라우저에서 실행된다는 것. 따라서 서버에서 제어할 수 없다.
   
+### Spring actuator
+- 스프링부트 애플리케이션에서 제공하는 여러가지 정보, 상태를 모니터링 할 수 있는 기능
+-> spring actuator admin과 함께 사용하면 UI로 편하게 볼 수 있다.
