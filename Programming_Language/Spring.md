@@ -254,3 +254,6 @@ public abstract class BaseTimeEntity {
 ### Spring actuator
 - 스프링부트 애플리케이션에서 제공하는 여러가지 정보, 상태를 모니터링 할 수 있는 기능
 -> spring actuator admin과 함께 사용하면 UI로 편하게 볼 수 있다.
+
+### Thread pool executor
+- 스레드풀을 편하게 관리하게 해주는 클래스
