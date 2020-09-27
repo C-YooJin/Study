@@ -257,3 +257,13 @@ public abstract class BaseTimeEntity {
 
 ### Thread pool executor
 - 스레드풀을 편하게 관리하게 해주는 클래스
+
+### @ResponseBody
+- http에는 header부와 body부가 있는데, body단에 이 데이터를 직접 넣어주겠다는 뜻이다.
+```
+@GetMapping("hello-string")
+@ResponseBody
+public String helloString(@RequestParam("name") String name) {
+	return "hello"+ name;
+}
+```
