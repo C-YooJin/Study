@@ -109,6 +109,7 @@ public class VizConfig {
 }
 ```
 이런식으로. 그러니까 이게 뭐냐면. Configuration 파일에서 지금 Controller를 bean에 등록해줬기 때문에, VizController 클래스 위에 @Controller 붙여주지 않아도 된다는 말이다. 이 코드로인해 이미 Controller로 bean에 등록 됐기 때문에.
+- 스프링 빈은 기본으로 <b>싱글톤</b>으로 등록한다. 따라서 같은 스프링 빈이면 모두 같은 인스턴스다. 특별한 경우가 아닌 이상 대부분 싱글톤을 사용한다.
 
 #### 등록 된 bean을 어떻게 꺼내 쓰지?
 <b> :heavy_check_mark: 1. Application Context 사용해서 꺼내기</b> <br>
@@ -119,7 +120,7 @@ public class VizConfig {
   - Autowired는 생성자, 메소드, 멤버변수 위에 사용할 수 있다. 대부분은 멤버변수 위에 선언하여 사용한다.
   - 스프링 컨테이너는 멤버변수 위에 붙은 Autowired를 확인하는 순간 해당 변수의 타입을 체크한다. 그리고 그 타입의 객체가 메모리에 존재하는지를 확인한 후에, 그 객체를 변수에 주입한다.
   - 그런데 만약 @Autowired가 붙은 객체가 메모리에 없다면 컨테이너가 `NoSuchBeanDefinitionException`을 발생시킨다. 
-  ![image](https://user-images.githubusercontent.com/30011635/89385247-47267880-d73a-11ea-9ce1-2f3dfaf45461.png)
+  ![image](https://user-images.githubusercontent.com/30011635/89385247-47267880-d73a-11ea-9ce1-2f3dfaf45461.png)   
 
 ### AOP (Aspect Oriented Programming) 
 - 똑같은 코드인데 흩어져있는 코드들. 이걸 바꾸려면 일일이 찾아가서 바꿔줘야 되는 문제가 있음. 
@@ -178,6 +179,26 @@ Member member = Member.Builder()
 - S - Self Validating (매뉴얼 없이 테스트 코드만 실행해도 성공, 실패 여부를 알 수 있어야 한다.)
 - T - Timely (바로 사용 가능해야 한다.) <br>
 <font color="red"> Junit, given-when-then 패턴으로 먼저 공부, 각 레이어에 대한 유닛테스트와 전체 api에 대한 인테그레이션 테스트 (http test) 공부 방법으로 </font>
+- 테스트는 실행되고 끝날 때 마다 저장소를 지워줘야된다. 테스트 코드를 한꺼번에 실행 시킬 경우, 어떤 테스트가 먼저 실행될지 알 수 없다. 즉, 순서를 보장하지 않는다는 뜻. 테스트는 순서, 의존관계 없이 설계 돼야 한다. 
+```
+// 테스트코드 실행 후 저장소에 데이터 삭제해주는 코드
+@AfterEach
+public void afterEach) {
+	repository.clearStore();
+}
+```
+- 테스트코드 메소드명은 과감하게 한글로 바꿔도 된다. 
+```
+// 이런식으로..
+@Test
+void 회원가입() {
+}
+```
+- given, when, then 패턴
+- given -> 
+- when -> 뭘 검증할거냐?
+- then -> 검증부 -> Assertions로 해주자. assertj 라이브러리의 클래스.  
+  
 
 ### JPA auditing 
 중복 되는 코드를 좀 더 효율적으로 짜도록 도와준다. 특히 게시물 수정 시간 같은 것..!
@@ -275,3 +296,7 @@ public String helloString(@RequestParam("name") String name) {
 
 ### Controller
 - `model.addAttribute("key", value)` 컨트롤러에서 return해주는 view에 "key"값을 전달해주는 역할을 한다.
+
+### Service
+- 실제 비즈니스 로직을 구현하는 부분
+
