@@ -58,3 +58,7 @@ $.ajax({
 - success단에서 사용함
 - `JSON.parse(param)`
 - 결과 `{name:"yoojin", age: 1234}`
+
+### const {a, b, c} = v;
+[비구조화 할당](https://learnjs.vlpt.us/useful/06-destructuring.html)
+
