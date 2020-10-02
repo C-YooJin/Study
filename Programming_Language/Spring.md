@@ -272,3 +272,6 @@ public String helloString(@RequestParam("name") String name) {
 	return "hello"+ name;
 }
 ```
+
+### Controller
+- `model.addAttribute("key", value)` 컨트롤러에서 return해주는 view에 "key"값을 전달해주는 역할을 한다.
