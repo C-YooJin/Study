@@ -61,4 +61,17 @@ $.ajax({
 
 ### const {a, b, c} = v;
 [비구조화 할당](https://learnjs.vlpt.us/useful/06-destructuring.html)
+```
+const object = { a: 1, b: 2 };
 
+const { a, b } = object;
+
+console.log(a); // 1
+console.log(b); // 2
+```
+
+### 동치연산자
+- == (동등연산자)
+  - 같은지 보는 거.. 만약 두 자료의 타입이 다르다면 타입 변환해서 검토해준다. 
+- === (일치연산자)
+  - 두 피연산자가 엄격하게 같은지 비교해준다. 타입까지 같아야 됨.
