@@ -300,3 +300,9 @@ public String helloString(@RequestParam("name") String name) {
 ### Service
 - 실제 비즈니스 로직을 구현하는 부분
 
+### @Controller와 @RestController 차이
+- @Controller 
+  - 보통 view를 반환하기 위해 씀
+- @RestController
+  - JSON 형태로 객체 데이터를 반환하기 위해 씀
+  - api 컨트롤러 같은 느낌
