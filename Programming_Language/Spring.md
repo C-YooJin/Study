@@ -306,3 +306,7 @@ public String helloString(@RequestParam("name") String name) {
 - @RestController
   - JSON 형태로 객체 데이터를 반환하기 위해 씀
   - api 컨트롤러 같은 느낌
+  
+  ### HttpStatus.OK and HttpStatus.ACCEPTED
+  - HttpStatus.OK : 200ok는 리퀘스트가 성공했음을 의미한다. 응답결과는 리퀘스트 메소드에 따라 다르다.
+  - HttpStatus.ACCEPTED: 202 Accepted는 리퀘스트가 프로세싱되기 위해서 억셉트 되었다는 뜻. 그러나 프로세싱이 완벽하게 끝난 건 아니다. 리퀘스트는 아직 진행중일지도 아닐지도 모른다.
