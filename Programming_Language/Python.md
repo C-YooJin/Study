@@ -43,3 +43,25 @@ class Node:
   - `.next()` : 다음 노트 검색 (search)
   - `.delete()` : 현재 노드의 삭제 (delete)
 - `next`의 기본 값은 `NULL`이 아니라 `None`이다.
+
+### sys.argv[x]
+- 명령행으로 프로그램 인자값 받기
+```
+# memo.py
+import sys
+
+first = sys.argv[0]
+second = sys.argv[1]
+third = sys.argv[2]
+
+print("first:", first)
+print("second:", second)
+print("third:", third)
+```
+
+위 프로그램을 실행 시킬 때 `python3 memo.py Name Kelly` 이렇게 파일명을 포함한 3개의 인자로 실행시켜주면 다음과 같은 결과값이 출력된다.
+```
+first: memo.py
+second: Name
+third: Kelly
+```
