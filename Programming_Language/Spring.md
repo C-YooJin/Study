@@ -20,14 +20,24 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   - JPA의 Entity class는 데이터베이스에 저장하기 위해 유저가 정의한 class다.
   - DB와 자바객체를 맵핑해준다.
   - Annotation
-    - :heavy_check_mark:@Entity: @Entity가 설정된 클래스를 엔티티 클래스라고 하며, @Entity가 붙은 클래스는 테이블과 매핑된다.
+    - :heavy_check_mark:@Entity: @Entity가 설정된 클래스를 엔티티 클래스라고 하며, @Entity가 붙은 클래스는 테이블과 매핑된다. @Entity 있으면 무조건 "아 이건 jpa가 맵핑한다!"고 생각하면 됨
     - :heavy_check_mark:@Table: 엔티티와 관련된 테이블을 매핑한다. name속성을 사용하여 테이블과 매핑하는데, name을 생략하면 클래스 이름이 테이블 이름과 매핑된다. 다시 설명하자면 `@Table(name = "XXX")` 같은 형식으로 작성하면 이름을 다르게 해서 매핑이 가능하다는 것이다.
-    - :heavy_check_mark:@Id: Entity 클래스의 필수 어노테이션이다. <b>이게 없는 엔티티 클래스는 JPA가 처리하지 못한다.</b> 일반적으로 키(primary key)를 가지는 변수에 선언한다.
-    - :heavy_check_mark:@GeneratedValue: @Id가 선언된 필드에 기본 키를 자동으로 생성하여 할당할 때 사용한다. 다양한 옵션이 있지만 이걸 사용하면 데이터베이스에 따라서 자동으로 결정 된다. H2는 시퀀스를 이용하여 처리한다.
+    - :heavy_check_mark:@Id: Entity 클래스의 필수 어노테이션이다. <b>이게 없는 엔티티 클래스는 JPA가 처리하지 못한다.</b> 일반적으로 키(primary key)를 가지는 변수에 선언한다. 걍 pk 맵핑해주는 어노테이션
+    - :heavy_check_mark:@GeneratedValue: @Id가 선언된 필드에 기본 키를 자동으로 생성하여 할당할 때 사용한다. 다양한 옵션이 있지만 이걸 사용하면 데이터베이스에 따라서 자동으로 결정 된다. H2는 시퀀스를 이용하여 처리한다. `@GeneratedValue(strategy = GenerationType.IDENTITY)` 해주면 디비가 알아서 생성해줌.. id값을 하나씩 ++해서 저장해줌.
     - :heavy_check_mark:@Temporal: 날짜 타입의 변수에 선언하여 날짜 타입을 매핑할 때 사용한다. TemporalType의 DATE, TIME, TIMESTAMP중 하나를 선택할 수 있다.
     - :heavy_check_mark:@Column: @Column선언은 꼭 필요한 것은 아니다. 하지만, @Column에서 지정한 멤버 변수와 데이터베이스의 컬럼명을 다르게 하고 싶다면 `@Column(name="XXX")`같은 형식으로 작성하자. 디폴트는 기본적으로 멤버 변수명과 일치하는 데이터베이스의 컬럼을 매핑한다. 
   - ref. 갓대희님 티스토리: [[스프링부트 (3)] SpringMVC(2) Spring Boot View 설정 및 JSP 연동하기(Thymeleaf 추가)](https://goddaehee.tistory.com/204)
   - ref. JDM's blog: [스프링부트 JPA예제](https://jdm.kr/blog/121)
+#### <스프링 기본편, JPA> 김영한님
+- 2015년 이전 JPA가 한국에 제대로 상륙하지 않은 이유는 국내에 문서가 잘 없었어서..!
+- JPA도 스프링만큼 기술적인 넓이와 깊이가 있는 기술이다
+- 스프링에서도 JPA를 굉장히 많이 지원하고.. 스프링은 그냥 JPA를 기본으로 깔고 들어간다고 생각하면 된다.
+- properties
+  - spring.jpa.show=true 추가해주면 jpa가 날리는 sql을 로그로 볼 수 있다.
+  - spring.jpa.hibernate.ddl-auto=none 추가해주면 jpa를 보면 회원객체를 보고 테이블을 다 만들어준다.. 만약 테이블이 다 만들어져 있고 만들이진 걸 쓸거면 이건 일단 none으로 설정해주면 된다. none 말고 create 하면 테이블 자동으로 만들어줌!
+- JPA를 쓰려면 일단 entity라는 걸로 맵핑을 해줘야 된다.
+- jpa는 그냥 인터페이스다. 그냥 표준 진영이랄까.. 그리고 구현체는 여러 업체들이 있지만 보통은 하이버네이트로 한다.
+- ORM (Object Relational database table을 Mapping)
     
   
 ### POJO
