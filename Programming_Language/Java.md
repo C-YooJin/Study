@@ -207,3 +207,7 @@ A. 별도의 실행흐름(쓰레드)를 형성하기 위해서 자바 가상머�
 int capacity = 10;
 ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(capacity);
 ```
+
+### Generic
+- 자바 7 이전 버전에서는 `Map<String, String> map = new HashMap<String, String>();`
+- 자바 7부터는 `Map<String, String> map = new HashMap<>();`
