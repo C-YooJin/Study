@@ -117,3 +117,9 @@ Failover Time | 0초 | 30 - 300초
 
 해결 방법은 보통 
 1. Access-Control-Allow-Origin 헤더의 값으로 지정된 도메인으로부터의 요청만 서버의 리소스에 접근할 수 있게 해준다. 등등..있지만.. 이건 실제 사이드 프로젝트에서 적용해보면서 공부하는게 나을듯.. 이론으로 이해하기 쉽지 않군.
+
+### 웹 작동방식
+![image](https://user-images.githubusercontent.com/30011635/96097326-c63ee680-0f0b-11eb-8056-e9bd149421ae.png)
+사용자기 url을 통해서 http request를 요청한다. 해당 url을 기반으로 DNS서버에서 해당 url의 도메인 네임을 가진 IP주소를 찾아낸다. IP+url을 들고 tcp프로토콜을 통해 인터넷으로 접속~ 인터넷이 해당 ip주소와 맞는 서버에 url을 던져준다. url을 받은 서버는 응답을 다시 http 형태로 return 해줌. 사용자 브라우저에 html, css, js로 된 웹 프론트를 뿌려준다. 데이터를 전달해준다. 
+![image](https://user-images.githubusercontent.com/30011635/96098565-3ac65500-0f0d-11eb-966a-754e3f8e5518.png)
+[DNS의 세가지 메시지 타입](https://www.netmanias.com/ko/?m=view&id=blog&no=5365)
