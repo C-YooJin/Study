@@ -324,3 +324,6 @@ public String helloString(@RequestParam("name") String name) {
 ### @JsonProperty
 - jackson 라이브러리를 import 해야 사용할 수 있다
 - [Jackson라이브러리 이해하기](https://mommoo.tistory.com/83)
+
+### JPA
+- [Spring Boot JPA - 시작 및 기본 설정](https://goddaehee.tistory.com/209)
