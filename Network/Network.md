@@ -126,4 +126,5 @@ Failover Time | 0초 | 30 - 300초
 [DNS의 세가지 메시지 타입](https://www.netmanias.com/ko/?m=view&id=blog&no=5365)
 [DNS 기본 동작 설명](https://www.netmanias.com/ko/?m=view&id=blog&no=5353)
 ![image](https://user-images.githubusercontent.com/30011635/96106947-c395be80-0f16-11eb-9df2-1d8d96dc698b.png)
+[Google DNS 설명](https://www.netmanias.com/ko/?m=view&id=blog&no=5357)
 
