@@ -13,6 +13,8 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   - 느슨한 결합: 객체를 주입받는 다는 것은 외부에서 생성된 객체를 인터페이스를 통해서 넘겨받는 것이다. 이렇게 하면 결합도를 낮출 수 있고, 런타임시에 의존관계가 결정되기 때문에 유연한 구조를 가진다. 
 
 ### JPA
+- [JPA는 도대체 뭘까?](https://velog.io/@adam2/JPA%EB%8A%94-%EB%8F%84%EB%8D%B0%EC%B2%B4-%EB%AD%98%EA%B9%8C-orm-%EC%98%81%EC%86%8D%EC%84%B1-hibernate-spring-data-jpa)
+- 참고로 JPA는 스프링에서 제공하는 게 아니고 자바에서 제공하는 persistence api다.
 - JPA Repository
   - [SpringBoot JPA 예제](https://jdm.kr/blog/121)
 - JPA는 자바 객체와 데이터를 맵핑시켜준다. Entity class 활용.
