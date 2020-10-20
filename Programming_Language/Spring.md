@@ -30,6 +30,7 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
     - :heavy_check_mark:@Column: @Column선언은 꼭 필요한 것은 아니다. 하지만, @Column에서 지정한 멤버 변수와 데이터베이스의 컬럼명을 다르게 하고 싶다면 `@Column(name="XXX")`같은 형식으로 작성하자. 디폴트는 기본적으로 멤버 변수명과 일치하는 데이터베이스의 컬럼을 매핑한다. 
   - ref. 갓대희님 티스토리: [[스프링부트 (3)] SpringMVC(2) Spring Boot View 설정 및 JSP 연동하기(Thymeleaf 추가)](https://goddaehee.tistory.com/204)
   - ref. JDM's blog: [스프링부트 JPA예제](https://jdm.kr/blog/121)
+  - Jpa Repository -> 메소드로 데이터를 이러쿵 
 #### <스프링 기본편, JPA> 김영한님
 - 2015년 이전 JPA가 한국에 제대로 상륙하지 않은 이유는 국내에 문서가 잘 없었어서..!
 - JPA도 스프링만큼 기술적인 넓이와 깊이가 있는 기술이다
