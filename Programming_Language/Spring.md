@@ -306,6 +306,10 @@ public String helloString(@RequestParam("name") String name) {
 	return "hello"+ name;
 }
 ```
+- 자바 객체를 JSON/XML 형식으로 변환해서 Body에 실어 전송할 수 있음
+
+### @RequestBody
+- 요청으로 들어온 JSON/XML을 자바 객체로 변환해서 전달 받을 수 있음
 
 ### Controller
 - `model.addAttribute("key", value)` 컨트롤러에서 return해주는 view에 "key"값을 전달해주는 역할을 한다.
