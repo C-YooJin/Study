@@ -334,3 +334,20 @@ public String helloString(@RequestParam("name") String name) {
 
 ### JPA
 - [Spring Boot JPA - 시작 및 기본 설정](https://goddaehee.tistory.com/209)
+- spring boot + JPA + MySQL 연결하는 `application.yml`
+```
+server:
+  address: localhost
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: covid19
+    password: Covid19!
+    url: jdbc:mysql://localhost:3306/DBNAME?covid=false&characterEncoding=utf8mb4&serverTimezone=UTC
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    show-sql: true
+```
