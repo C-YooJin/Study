@@ -159,6 +159,7 @@ public String getTitle(){
 }
 ```
 - Entity 클래스에는 setter를 절대 쓰면 안 된다. builder로 데이터를 생성해주자.
+  - <b>setter를 쓰면 안 되는 이유는 엔티티값이 쉽게 변경되면 안 되기 때문이다.</b>
 - <font color = "red"> <b>엔티티 클래스는 Domain 영역에 들어간다. </b> </font>
 
 ```
@@ -361,3 +362,11 @@ spring:
 
 - <b>DTO -> 데이터 전달 객체</b>
 - <b>Entity -> DB 저장 객체</b>
+
+### @PostMapping
+```
+@PostMapping(path = "/members", consumes = "application/json", produces = "application/json")
+public void addMember(@RequestBody Member member) {
+    //code
+}
+```
