@@ -159,7 +159,12 @@ public String getTitle(){
 }
 ```
 - Entity 클래스에는 setter를 절대 쓰면 안 된다. builder로 데이터를 생성해주자.
+  - <b>setter를 쓰면 안 되는 이유는 엔티티값이 쉽게 변경되면 안 되기 때문이다.</b>
+  - JPA Entity class에서 setter를 사용하면 안 되는 이유는 엔티티값이 쉽게 변경되면 안 되기 때문이다.
+  - 객체를 생성할 때는 3가지 방법중 하나를 사용합니다. -> 생성자, 정적 팩토리 메서드, builder패턴 -> [관련해서 김영한님 인프런 강의에 질문과 답변](https://www.inflearn.com/questions/16235)
 - <font color = "red"> <b>엔티티 클래스는 Domain 영역에 들어간다. </b> </font>
+- <b>DTO -> 데이터 전달 객체</b>
+- <b>Entity -> DB 저장 객체</b>
 
 ```
 // 객체의 생성자 설정 (필드가 많을경우 롬복의 @Builder 사용하면 좋다)
@@ -328,6 +333,14 @@ public String helloString(@RequestParam("name") String name) {
 - HttpStatus.OK : 200ok는 리퀘스트가 성공했음을 의미한다. 응답결과는 리퀘스트 메소드에 따라 다르다.
 - HttpStatus.ACCEPTED: 202 Accepted는 리퀘스트가 프로세싱되기 위해서 억셉트 되었다는 뜻. 그러나 프로세싱이 완벽하게 끝난 건 아니다. 리퀘스트는 아직 진행중일지도 아닐지도 모른다.
   
+### @PostMapping
+```
+@PostMapping(path = "/members", consumes = "application/json", produces = "application/json")
+public void addMember(@RequestBody Member member) {
+    //code
+}
+```  
+  
 ### @JsonProperty
 - jackson 라이브러리를 import 해야 사용할 수 있다
 - [Jackson라이브러리 이해하기](https://mommoo.tistory.com/83)
@@ -345,4 +358,17 @@ public String helloString(@RequestParam("name") String name) {
 
 ![image](https://user-images.githubusercontent.com/30011635/96969713-b51a5900-154d-11eb-8b59-13a7b4670909.png)
 
+#### Reference
+- [JPA 리파지터리, 데이터 저장하기](https://cloudstudying.kr/lectures/440)
+- [스프링과 DAO, DTO, Repository, Entity](https://velog.io/@agugu95/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%8C%A8%ED%84%B4%EA%B3%BC-DAO-DTO-Repository)
+- [DAO와 Repository / DTO / VO](https://kkambi.tistory.com/30)
+- [Builder 기반으로 객체를 안전하게 생성하는 방법](https://cheese10yun.github.io/spring-builder-pattern/)
+- [스프링에서 JPA 사용하기](https://velog.io/@swchoi0329/Spring-Boot%EC%97%90%EC%84%9C-JPA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+- [[Spring] Boot와JPA(Mysql)을 이용한 Rest API 간단 예제](https://cjw-awdsd.tistory.com/24)
 
+### After Covid Project
+- DAO -> DB에 접근해서 CRUD를 좀 더 편하게 해주는 작업. 만약 JPA를 사용한다면 JpaRepository가 DAO가 된다.
+- DTO -> 멤버변수는 private 으로, public getter/setter 필수
+- DTO(Data Transfer Object)는 이름과 같이 계층 간 데이터 교환을 위해 사용하는 객체다.
+  - :rotating_light: 여기서 말하는 계층이란, View - Controller - Service - DAO와 같은 각 계층을 말한다.
+- getter, setter는 데이터를 오브젝트로 변경해주는 메소드다. 그치 맞지.. 메소드로 불러올 수 있게 해주니까..
