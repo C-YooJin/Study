@@ -351,3 +351,11 @@ spring:
     generate-ddl: true
     show-sql: true
 ```
+#### Reference
+- [JPA 리파지터리, 데이터 저장하기](https://cloudstudying.kr/lectures/440)
+- [스프링과 DAO, DTO, Repository, Entity](https://velog.io/@agugu95/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%8C%A8%ED%84%B4%EA%B3%BC-DAO-DTO-Repository)
+- [DAO와 Repository / DTO / VO](https://kkambi.tistory.com/30)
+- [Builder 기반으로 객체를 안전하게 생성하는 방법](https://cheese10yun.github.io/spring-builder-pattern/)
+- [스프링에서 JPA 사용하기](https://velog.io/@swchoi0329/Spring-Boot%EC%97%90%EC%84%9C-JPA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+- [[Spring] Boot와JPA(Mysql)을 이용한 Rest API 간단 예제](https://cjw-awdsd.tistory.com/24)
+- 
