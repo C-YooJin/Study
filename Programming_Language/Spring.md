@@ -375,3 +375,10 @@ public void addMember(@RequestBody Member member) {
     //code
 }
 ```
+
+### After Covid Project
+- DAO -> DB에 접근해서 CRUD를 좀 더 편하게 해주는 작업. 만약 JPA를 사용한다면 JpaRepository가 DAO가 된다.
+- DTO -> 멤버변수는 private 으로, public getter/setter 필수
+- DTO(Data Transfer Object)는 이름과 같이 계층 간 데이터 교환을 위해 사용하는 객체다.
+  - :rotating_light: 여기서 말하는 계층이란, View - Controller - Service - DAO와 같은 각 계층을 말한다.
+- getter, setter는 데이터를 오브젝트로 변경해주는 메소드다. 그치 맞지.. 메소드로 불러올 수 있게 해주니까..
