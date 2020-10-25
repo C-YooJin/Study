@@ -159,7 +159,6 @@ public String getTitle(){
 }
 ```
 - Entity 클래스에는 setter를 절대 쓰면 안 된다. builder로 데이터를 생성해주자.
-  - <b>setter를 쓰면 안 되는 이유는 엔티티값이 쉽게 변경되면 안 되기 때문이다.</b>
 - <font color = "red"> <b>엔티티 클래스는 Domain 영역에 들어간다. </b> </font>
 
 ```
@@ -184,10 +183,6 @@ Member member = Member.Builder()
       .address(address)
       .build();
 ```
-- JPA Entity class에서 setter를 사용하면 안 되는 이유는 엔티티값이 쉽게 변경되면 안 되기 때문이다.
-- 객체를 생성할 때는 3가지 방법중 하나를 사용합니다. -> 생성자, 정적 팩토리 메서드, builder패턴 -> [관련해서 김영한님 인프런 강의에 질문과 답변](https://www.inflearn.com/questions/16235)
-
-
 
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
@@ -339,46 +334,15 @@ public String helloString(@RequestParam("name") String name) {
 
 ### JPA
 - [Spring Boot JPA - 시작 및 기본 설정](https://goddaehee.tistory.com/209)
-- spring boot + JPA + MySQL 연결하는 `application.yml`
-```
-server:
-  address: localhost
-  port: 8080
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: covid19
-    password: Covid19!
-    url: jdbc:mysql://localhost:3306/DBNAME?covid=false&characterEncoding=utf8mb4&serverTimezone=UTC
-  jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    generate-ddl: true
-    show-sql: true
-```
 
-#### Reference
-- [JPA 리파지터리, 데이터 저장하기](https://cloudstudying.kr/lectures/440)
-- [스프링과 DAO, DTO, Repository](https://velog.io/@agugu95/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%8C%A8%ED%84%B4%EA%B3%BC-DAO-DTO-Repository)
-- [DAO와 Repository / DTO / VO](https://kkambi.tistory.com/30)
-- [Builder 기반으로 객체를 안전하게 생성하는 방법](https://cheese10yun.github.io/spring-builder-pattern/)
-- [스프링에서 JPA 사용하기](https://velog.io/@swchoi0329/Spring-Boot%EC%97%90%EC%84%9C-JPA-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
-- [[Spring] Boot와JPA(Mysql)을 이용한 Rest API 간단 예제](https://cjw-awdsd.tistory.com/24)
+### JPA를 쓸 때 왜 Entity클래스와 Dto클래스를 따로 만들까? builder도 따로 있음.. 이해 안 돼... 에서 시작된 공부
+- Entity클래스란 JPA에서 직접 DB에 접근하는 클래스다
+- Entity 클래스로 디비에도 접근하고 view단에도 뿌려주려면 약간 문제가 있다..
+  - 양방향으로 연결 된 Entity는 순환 참조 문제가 발생한다
+  - Entity가 변경 되거나 무거운 양의 데이터를 들고 여러 영역을 넘나들어야 되는 문제점이 있다 -> 성능상 안 좋음
+- 실제 DB와 mapping되고 데이터의 저장, 수정, 조회, 삭제에 대해 데이터를 관리하고 보관하는 Persistence Layer까지는 Entity를 사용
+- Service 영역에서부터 클라이언트 영역까지는 DTO를 사용합시다!
 
-- <b>DTO -> 데이터 전달 객체</b>
-- <b>Entity -> DB 저장 객체</b>
+![image](https://user-images.githubusercontent.com/30011635/96969713-b51a5900-154d-11eb-8b59-13a7b4670909.png)
 
-### @PostMapping
-```
-@PostMapping(path = "/members", consumes = "application/json", produces = "application/json")
-public void addMember(@RequestBody Member member) {
-    //code
-}
-```
 
-### After Covid Project
-- DAO -> DB에 접근해서 CRUD를 좀 더 편하게 해주는 작업. 만약 JPA를 사용한다면 JpaRepository가 DAO가 된다.
-- DTO -> 멤버변수는 private 으로, public getter/setter 필수
-- DTO(Data Transfer Object)는 이름과 같이 계층 간 데이터 교환을 위해 사용하는 객체다.
-  - :rotating_light: 여기서 말하는 계층이란, View - Controller - Service - DAO와 같은 각 계층을 말한다.
-- getter, setter는 데이터를 오브젝트로 변경해주는 메소드다. 그치 맞지.. 메소드로 불러올 수 있게 해주니까..
