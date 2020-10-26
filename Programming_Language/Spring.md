@@ -188,6 +188,7 @@ Member member = Member.Builder()
       .address(address)
       .build();
 ```
+- Dto에서 필요한 @getter @setter @ToString @NoArgsConstructor를 한꺼번에 해주는 어노테이션 -> @Data
 
 ### Test Code (TDD)
 테스트코드의 다섯가지 원칙
