@@ -373,3 +373,11 @@ public void addMember(@RequestBody Member member) {
 - DTO(Data Transfer Object)는 이름과 같이 계층 간 데이터 교환을 위해 사용하는 객체다.
   - :rotating_light: 여기서 말하는 계층이란, View - Controller - Service - DAO와 같은 각 계층을 말한다.
 - getter, setter는 데이터를 오브젝트로 변경해주는 메소드다. 그치 맞지.. 메소드로 불러올 수 있게 해주니까..
+
+### application.yml h2-database 부분
+```
+spring:
+  h2:
+    console:
+      enabled: true
+```
