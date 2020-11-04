@@ -221,6 +221,7 @@ void 회원가입() {
 
 ### JPA auditing 
 중복 되는 코드를 좀 더 효율적으로 짜도록 도와준다. 특히 게시물 수정 시간 같은 것..!
+[JPA auditing 기능이란](https://webcoding-start.tistory.com/53)
 
 ```
 // 테스트 코드
