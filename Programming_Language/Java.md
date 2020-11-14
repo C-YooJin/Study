@@ -216,3 +216,9 @@ ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(capacity);
 - 인터페이스 List 대신에 구현 클래스 ArrayList의 형타입을 알 수 있다면 더 편리하게 사용할 수 있습니다. (낮게 나는 새가 더 자세히 본다)
 - 구현 클래스 ArrayList 대신에 인터페이스 List를 사용하면 더 많은 형타입을 받아 들일 수 있습니다. (높게 나는 새가 더 멀리 본다.)
 - 예를들어, 목록의 모든 원소를 출력하는 메서드 `public void printAll(List items)`는 `public void printAll(ArrayList items)` 보다 더 많은 종류의 형타입을 받아 들일 수 있습니다. (Vector, Set, etc)
+
+### POI
+엑셀 파일 다루는 라이브러리
+
+### Launch4j
+exe파일 만드는 라이브러리
