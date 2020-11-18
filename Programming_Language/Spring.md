@@ -389,3 +389,6 @@ spring:
 - create-drop: 시작할 때는 create와 동일하고 종료될 때 (SessionFactory종료) drop을 실행한다. in-memory 데이터베이스에서는 이것이 기본값이다. 따라서 해당 옵션을 설정하지 않으면 H2 database는 어플리케이션 재시작시 이전의 데이터는 없어지게 된다.
 - <b>update: 변경된 Scheme만 적용하고 데이터는 그대로 유지한다. -> 서비스 운영중에 테이블의 Schema가 종종 변경하게 된다. 이럴 경우 기존에는 직접 ALTER TABLE을 이용하여 변경된 Schema를 변경하지만 이 옵션을 정의하여 주면 @Entity에 추가된 값에 대해 자동으로 Schema를 변경하여 준다.</b>
 - validate: Schema validation만 수행
+
+### @Transactinal 어노테이션
+- INSERT , UPDATE , DELETE 쿼리를 수행 할 때는 트랜잭션을 필수적으로 명시를 해줘야 합니다.
