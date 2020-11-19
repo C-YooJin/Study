@@ -84,11 +84,11 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   ```
   package com.어쩌구.저쩌구;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+  import org.springframework.stereotype.Controller;
+  import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class BoardController {
+  @Controller
+  public class BoardController {
 
     @GetMapping("/")
     public String list() {
