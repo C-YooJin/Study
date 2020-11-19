@@ -80,6 +80,26 @@ Spring Boot -> 개발 환경 세팅이 좀더 간편하고 (최소화 돼 있고
   // bean으로 주입 받은 객체. new로 해서 인스턴스를 생성해줄 필요가 없음. bean에 있는 걸 가져다 쓴다.
   OwnerController bean = applicationContext.getBean(OwnerController.class);
   ```
+  
+  ```
+  package com.어쩌구.저쩌구;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class BoardController {
+
+    @GetMapping("/")
+    public String list() {
+        return "board/list.html";
+    }
+
+    @GetMapping("/post")
+    public String post() {
+        return "board/post.html";
+    }
+  ```
 #### 어떻게 스프링 컨테이너 안에다가 bean을 만들어줄까?
 #### 어떻게 어떤 특정한 instance를 bean으로 만들 수 있을까?
 크게 두 가지 방법 있음 <br>
@@ -392,3 +412,5 @@ spring:
 
 ### @Transactinal 어노테이션
 - INSERT , UPDATE , DELETE 쿼리를 수행 할 때는 트랜잭션을 필수적으로 명시를 해줘야 합니다.
+
+
