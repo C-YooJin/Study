@@ -413,4 +413,9 @@ spring:
 ### @Transactinal 어노테이션
 - INSERT , UPDATE , DELETE 쿼리를 수행 할 때는 트랜잭션을 필수적으로 명시를 해줘야 합니다.
 
+### 웹, MVC패턴에서 Entity class(DAO)와 Dto
+- entity가 있는데 왜 굳이 Dto 클래스를 만들어줘야 되는지??? 
+  - 일단 내가 알기론, Entity 클래스는 말 그대로 DB에 접근하는 낮은 단계에서 의미가 있는 클래스고, view에 데이터를 뿌려주기 위해서는 Dto 클래스가 필요하다. 그리고 이것을 ModelMapper가 연결해준다...???
+- View에서 표현하는 속성값들은 요청에 따라 계속 달라질 수 있는데, 그 때마다 Entity의 속성값들이 변하게 되면 학생이라는 영속성 모델을 표현한 Students 클래스의 순수성이 모호해지게 된다.
+
 
