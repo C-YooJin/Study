@@ -228,3 +228,7 @@ exe파일 만드는 라이브러리
 
 ### 접근 제한자
 - 객체의 멤버에 대한 접근을 제한할 때 사용하는 것
+
+### HashMap
+![image](https://user-images.githubusercontent.com/30011635/105696777-17b53380-5f47-11eb-93b0-f950f84a2e11.png)
+
