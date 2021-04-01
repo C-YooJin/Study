@@ -254,4 +254,11 @@ HashMap<String,String> map6 = new HashMap<String,String>(){{//초기값 지정
   - xPath 지원 안 함
   - 속도 빠름 
   - Click event 지원 안 함
+
+el#id ☞ id로 가지고 오기
+el.class ☞ class로 가지고 오기
+el[attr] ☞ attribute로 가지고 오기
+parent > child ☞ parent 바로 밑의 자식 노드를 가지고 오기
 #### 결론: Selenium은 Jsoup의 몇 가지 단점을 커버하지만, 동적 웹페이지가 아니라면 Jsoup을 이용하는 것이 낫다. 셀레니움 느리니까. (실무에서도 경험한 부분)
+
+
