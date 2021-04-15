@@ -254,6 +254,10 @@ HashMap<String,String> map6 = new HashMap<String,String>(){{//초기값 지정
   - xPath 지원 안 함
   - 속도 빠름 
   - Click event 지원 안 함
+  - text()와 ownText()의 차이
+    - text(): 원하는 노드의 텍스트 노드를 읽을 수 있다. Gets the normalized, combined text of this element and all its children. Whitespace is normalized and trimmed.
+    - ownText(): 요소의 직계 자손인 텍스트 노드에서만 값을 추출한다. Gets the (normalized) text owned by this element only; does not get the combined text of all children.
+    - ref) [Jsoup 공식 문서.. 예시 잘 나와있음](https://jsoup.org/apidocs/org/jsoup/nodes/Element.html#text())
 
 el#id ☞ id로 가지고 오기
 el.class ☞ class로 가지고 오기
