@@ -265,4 +265,7 @@ el[attr] ☞ attribute로 가지고 오기
 parent > child ☞ parent 바로 밑의 자식 노드를 가지고 오기
 #### 결론: Selenium은 Jsoup의 몇 가지 단점을 커버하지만, 동적 웹페이지가 아니라면 Jsoup을 이용하는 것이 낫다. 셀레니움 느리니까. (실무에서도 경험한 부분)
 
+### Java Collection Cheat Sheet
+![image](https://user-images.githubusercontent.com/30011635/114990935-fcb5e800-9ed3-11eb-81cf-d9e03259064f.png)
+
 
