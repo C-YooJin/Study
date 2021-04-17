@@ -268,4 +268,8 @@ parent > child ☞ parent 바로 밑의 자식 노드를 가지고 오기
 ### Java Collection Cheat Sheet
 ![image](https://user-images.githubusercontent.com/30011635/114990935-fcb5e800-9ed3-11eb-81cf-d9e03259064f.png)
 
+### Thread-safe란?
+- Multi thread 프로그래밍에서 여러 Thread로부터 어떤 method, object, variable에 "동시에" 접근이 이뤄져도 프로그램 실행에 문제가 없음
+- 하나의 function이 한 thread로 부터 호출 되어 수행중일 때, 동시에 다른 thread가 해당 method에 접근 해도 올바른 결과물이 출력 됨
+
 
