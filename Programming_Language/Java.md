@@ -267,6 +267,7 @@ parent > child ☞ parent 바로 밑의 자식 노드를 가지고 오기
 
 ### Java Collection Cheat Sheet
 ![image](https://user-images.githubusercontent.com/30011635/114990935-fcb5e800-9ed3-11eb-81cf-d9e03259064f.png)
+[아무리 공부해도 모자를 java collection에 대해 되게 잘 정리해둔 포스팅](http://blog.breakingthat.com/category/java/collection/)
 
 ### Thread-safe란?
 - Multi thread 프로그래밍에서 여러 Thread로부터 어떤 method, object, variable에 "동시에" 접근이 이뤄져도 프로그램 실행에 문제가 없음
