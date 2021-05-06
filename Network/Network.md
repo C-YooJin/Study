@@ -147,3 +147,5 @@ Failover Time | 0초 | 30 - 300초
   - 서버에서 세션 ID를 발행하여 관리
   - 각 클라이언트에게 고유 ID부여
   - 사용자가 많을 수록 메모리 차지
+
+내 블로그 포스팅[HTTP protocol 쿠키와 세션](https://deep-jin.tistory.com/entry/HTTP-protocol-cookie-session)
