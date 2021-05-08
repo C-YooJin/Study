@@ -17,6 +17,9 @@
   - git
   - big-o
   - type
+- [Mobile](https://github.com/C-YooJin/Study/tree/master/Mobile)
+  - Firebase
+  - Flutter
 - [Programming Language](https://github.com/C-YooJin/Study/tree/master/Programming_Language) 
   - Java 
   - JavaScript
