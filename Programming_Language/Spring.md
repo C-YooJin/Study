@@ -423,5 +423,5 @@ spring:
   - [h2-database초기화](https://roeldowney.tistory.com/271)
 
 ### 웹소켓
-[Ref 1. [번역] Spring-WebSocket](https://velog.io/@hanblueblue/%EB%B2%88%EC%97%AD-Spring-4-Spring-WebSocket)
-[Ref 2. Spring Boot, PostgreSQL을 이용한 RESTful API, WebSocket 구현](https://nashorn.tistory.com/entry/Spring-Boot-PostgreSQL%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-RESTful-API-%EA%B5%AC%ED%98%84)
+- [Ref 1. [번역] Spring-WebSocket](https://velog.io/@hanblueblue/%EB%B2%88%EC%97%AD-Spring-4-Spring-WebSocket)
+- [Ref 2. Spring Boot, PostgreSQL을 이용한 RESTful API, WebSocket 구현](https://nashorn.tistory.com/entry/Spring-Boot-PostgreSQL%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-RESTful-API-%EA%B5%AC%ED%98%84)
