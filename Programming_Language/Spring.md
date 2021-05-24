@@ -421,3 +421,7 @@ spring:
 ### h2-database 초기화
 - 웹개발을 하다가 새로운 프로젝트를 실행시켰는데 h2-console에서 SELECT 해 보니 이 전 프로젝트에서 생성한 컬럼이 그대로 남아있었다. 초기화가 필요하다고 생각했고 찾아 본 결과물 링크 첨부.
   - [h2-database초기화](https://roeldowney.tistory.com/271)
+
+### 웹소켓
+[Ref 1. [번역] Spring-WebSocket](https://velog.io/@hanblueblue/%EB%B2%88%EC%97%AD-Spring-4-Spring-WebSocket)
+[Ref 2. Spring Boot, PostgreSQL을 이용한 RESTful API, WebSocket 구현](https://nashorn.tistory.com/entry/Spring-Boot-PostgreSQL%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-RESTful-API-%EA%B5%AC%ED%98%84)
