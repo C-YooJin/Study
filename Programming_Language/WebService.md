@@ -10,3 +10,6 @@
 - 파이어베이스가 BaaS인데.. 스프링으로 백엔드 구현하는데 BaaS 써야되는 이유는? 그냥 Spring Security 쓰면 될듯..?
 
 ### Websocket, UDP(received message 구현)
+
+### jwt 토근을 활용한 사용자 인증
+- [jwt 토근 기반 인증](https://webcoding-start.tistory.com/50)
