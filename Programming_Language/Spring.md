@@ -431,3 +431,6 @@ spring:
 - Servlet이란: MVC 패턴에서 Controller 역할 담당
 - Dispatcher Servlet: HTTP request가 들어왔을 때 가장 먼저 처리하는 front controller
 - ref. [스프링 MVC - Dispatcher Servlet을 직접 구현해보자](https://velog.io/@ehdrms2034/%EC%8A%A4%ED%94%84%EB%A7%81-MVC-Dispatcher-Servlet%EC%9D%84-%EC%A7%81%EC%A0%91-%EA%B5%AC%ED%98%84%ED%95%B4%EB%B3%B4%EC%9E%90)
+![image](https://user-images.githubusercontent.com/30011635/119789935-764ae800-bf0e-11eb-8c01-c07ae9c828cf.png)
+Dispatcher-Servlet의 처리과정
+
