@@ -425,3 +425,9 @@ spring:
 ### 웹소켓
 - [Ref 1. [번역] Spring-WebSocket](https://velog.io/@hanblueblue/%EB%B2%88%EC%97%AD-Spring-4-Spring-WebSocket)
 - [Ref 2. Spring Boot, PostgreSQL을 이용한 RESTful API, WebSocket 구현](https://nashorn.tistory.com/entry/Spring-Boot-PostgreSQL%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-RESTful-API-%EA%B5%AC%ED%98%84)
+
+
+### Dispatcher Servlet
+- Servlet이란: MVC 패턴에서 Controller 역할 담당
+- Dispatcher Servlet: HTTP request가 들어왔을 때 가장 먼저 처리하는 front controller
+- ref. [스프링 MVC - Dispatcher Servlet을 직접 구현해보자](https://velog.io/@ehdrms2034/%EC%8A%A4%ED%94%84%EB%A7%81-MVC-Dispatcher-Servlet%EC%9D%84-%EC%A7%81%EC%A0%91-%EA%B5%AC%ED%98%84%ED%95%B4%EB%B3%B4%EC%9E%90)
