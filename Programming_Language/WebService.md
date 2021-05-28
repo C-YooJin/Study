@@ -13,3 +13,14 @@
 
 ### jwt 토근을 활용한 사용자 인증
 - [jwt 토근 기반 인증](https://webcoding-start.tistory.com/50)
+스프링 ㄱ시큐리티 존나어렵다..욕나온다 ㅅㅂ 탈모각
+
+### 인증과 인가 (우아한 Tech 루피님 강연)
+[[10분 테코톡] 루피의 인증과 인가](https://www.youtube.com/watch?v=JZgD8aPkHSc) <br>
+회원가입과 로그인 -> 나의 정보를 등록하고 내가 누구인지 인증하는 과정이다. <br>
+- 인증(Authentication) : 보호된 리소스에 접근하는 것을 허용하기 이전에 등록된 유저의 신원을 입증(Validating) 하는 과정 
+- 인가(Authorization) : 요청된 리소스에 접근할 수 있는 권한이 있는 인증(authenticated) 된 유저인지 입증(validating)하는 과정 <br>
+인증이 있은 후에 인가가 있다. 
+#### 생각해 볼 만한 것
+1. 인증 되었지만 권한이 없다 --> 인가x
+2. 인가 되었지만 인증은 되지 않았다 --> 개소리
