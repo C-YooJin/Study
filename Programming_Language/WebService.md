@@ -13,7 +13,6 @@
 
 ### jwt 토근을 활용한 사용자 인증
 - [jwt 토근 기반 인증](https://webcoding-start.tistory.com/50)
-스프링 ㄱ시큐리티 존나어렵다..욕나온다 ㅅㅂ 탈모각
 
 ### 인증과 인가 (OAuth) (우아한 Tech톡 루피님 강연)
 [[10분 테코톡] 루피의 인증과 인가](https://www.youtube.com/watch?v=JZgD8aPkHSc) <br>
@@ -35,3 +34,32 @@
 
 ### Spring security + Oauth2 + jwt
 - [Ref 1. Spring Security 와 OAuth 2.0 와 JWT 의 콜라보](https://velog.io/@tmdgh0221/Spring-Security-%EC%99%80-OAuth-2.0-%EC%99%80-JWT-%EC%9D%98-%EC%BD%9C%EB%9D%BC%EB%B3%B4)
+
+![image](https://user-images.githubusercontent.com/30011635/120022508-768ad680-c027-11eb-8733-b4aab1bfb346.png)
+
+#### OAuth 2.0
+- Resource owner: 개인정보 소유자 (유저 A)
+- Client: 제 3의 서버로부터 인증받고자 하는 서버. 즉, 직접 개발한 사이트 그 자체! 
+- Resource Server: 개인정보를 저장하고 있는 서버. (구글, 카카오, 네이버 등..)
+<br>
+- Client ID: Resource Server에서 발급해주는 ID. 웹 사이트 X에 구글이 할당한 ID를 알려주는 것이다.
+- Client Secret: Resource Server에서 발급해주는 PW. 웹 사이트 X에 구글이 할당한 PW를 알려주는 것이다.
+- Authorized Redirect Uri: Client 측에서 등록하는 Url. 만약 이 Uri로부터 인증을 요구하는 것이 아니라면, Resource Server는 해당 요청을 무시한다.
+
+#### jwt에 대하여
+- 단점
+  - 사용자 인증 정보가 필요한 리소스를 요청 할 때 헤더에 jwt정보를 입력해서 보내야 하는데, 네트워크 부하가 일어날 수 있다.
+  - 토큰 자체에 사용자 정보를 담고있기 때문에 jwt 만료전에 탈취당하면 정보가 유출 될 수 있다. (보안)
+  - jwt는 한 번 만들어져서 클라이언트에 전달되면 수정할 방법이 없기 때문에 만료기한을 꼭 잘 명시해줘야한다. 
+- 장점
+  - 서버가 확장되어도 모든 서버가 세션정보를 갖고있지 않아도 된다. 서버 수와 상관 없이 jwt 인증 방법을 알고 있다면 ok
+  - 웹과 앱간의 쿠키 세션 처리에도 유용하다.
+    - 브라우저와 앱에서의 쿠키 처리 방식이 다르기 때문에, jwt를 쓰면 유용한거지.
+
+#### 전체적인 큰 그림
+![IMG_0586](https://user-images.githubusercontent.com/30011635/120057432-ec219180-c07d-11eb-9342-03a9629204b8.jpg)
+유저(리소스 오너)가 우리 서비스(client)에서 로그인을 시도한다 = HTTP request를 보낸다 -> 구글이나 카카오같은 Oauth를 제공하는 사이트(즉, 리소스 서버)애 해당 정보가 등록되고 Access 토근이 발급된다.-> 이제부터 client에서 리소스 서버에 로그인을 요청할 떄 마다 즉, 유저A의 인증이 필요할 때 마다 Access Token을 이용하여 접근한다.
+
+#### jwt를 활용한 로그인 프로세스
+- jwt는 claim 기반 -> claim이란 사용자 정보
+-
