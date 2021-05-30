@@ -185,6 +185,32 @@ public String getTitle(){
 - <font color = "red"> <b>엔티티 클래스는 Domain 영역에 들어간다. </b> </font>
 - <b>DTO -> 데이터 전달 객체</b>
 - <b>Entity -> DB 저장 객체</b>
+```
+// Member 엔티티
+@Entity
+@Getter
+@Table(name = "member")
+public class Member{
+
+    // 기본 생성자 protected로 접근 제한(기본 생성자 접근 제한자는 protected 까지 허용
+    //기본 생성자의 접근 제한자를 private으로 걸면, 추후에 Lazy Loading 사용 시 Proxy 관련 예외가 발생)
+    protected Member(){};
+    
+    ...
+}
+
+
+// @NoArgsconstructor 어노테이션을 통한 protected 접근 제어.
+@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+@Table(name = "member")
+public class Member {
+
+}
+```
+일반적으로 @NoArgsConstructor(access = AccessLevel.PROTECTED)를 써줌. croiffle 프로젝트에서도 해당 방식 채택. <br>
+다시 한 번 말하지만 Entity class의 일관성을 유지하기 위함임.
 
 ```
 // 객체의 생성자 설정 (필드가 많을경우 롬복의 @Builder 사용하면 좋다)
