@@ -13,6 +13,7 @@
 
 ### jwt 토근을 활용한 사용자 인증
 - [jwt 토근 기반 인증](https://webcoding-start.tistory.com/50)
+- :star: [[SpringBoot] SpringBoot로 SpringSecurity 기반의 JWT 토큰 구현하기](https://mangkyu.tistory.com/57) :star:
 
 ### 인증과 인가 (OAuth) (우아한 Tech톡 루피님 강연)
 [[10분 테코톡] 루피의 인증과 인가](https://www.youtube.com/watch?v=JZgD8aPkHSc) <br>
