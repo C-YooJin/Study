@@ -291,3 +291,10 @@ parent > child ☞ parent 바로 밑의 자식 노드를 가지고 오기
   2. Iterable Interface와 Map간의 문제
      - 반복자로 뱉기 위해서 key와 value중 어느 것을 반복할 것인가? 애매함. <br>
   <b> 결론: Map이 콜렉션이다? 의미적으로는 맞을 수 있으나 JAVA에서는 Map을 Collection으로 보지 않음 </b>
+  
+### String, StringBuilder, StringBuffer
+[Java에서 String, StringBuilder, StringBuffer의 차이](https://novemberde.github.io/2017/04/15/String_0.html)<br>
+- 주소값
+  - `String` : 새로운 값을 할당할 때마다 주소값이 새로 생성 됨
+  - `StringBuffer` : 주소값을 메모리에 append 하기 때문에 새로 생성되지 x / 멀티쓰레드 환경에서 쓰면 좋음
+  - `StringBuilder` 
