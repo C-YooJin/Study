@@ -128,3 +128,24 @@ Failover Time | 0초 | 30 - 300초
 ![image](https://user-images.githubusercontent.com/30011635/96106947-c395be80-0f16-11eb-9df2-1d8d96dc698b.png)
 [Google DNS 설명](https://www.netmanias.com/ko/?m=view&id=blog&no=5357)
 
+
+### HTTP 프로토콜
+기본적으로 서버와 클라이언트가 통신을 할 때 마다 서버는 클라이언트가 누구인지 인증을 계속해야 한다. 그 이유는 HTTP 프로토콜이 connectionless, stateless한 특성이 있기 때문이다. 
+- Connectionless: 클라이언트가 요청을 한 후 응답을 받으면 그 연결을 끊어 버리는 특징
+- Stateless: 통신이 끝나면 상태를 유지하지 않는 특징<br>
+[아주 잘 정리 돼 있는 HTTP 프로토콜 쿠키와 세션](https://victorydntmd.tistory.com/34?category=719464)<br>
+[HTTP의 세션](https://mohwaproject.tistory.com/176)<br>
+- 쿠키: 서버에서 클라이언트에게 저장하도록 시키는 정보들 / 임시데이터 보관, 웹페이지 개인화에 쓰임
+  - Expires : 명시된 쿠키의 만료 날짜 (Default : 무제한)
+  - Max-Age : 쿠키 만료 시간 (Default : 무제한)
+  - Secure : HTTPS에서만 사용 가능하다.
+  - HttpOnly : js에서 사용불가능하도록 한다.
+  - Domain : 쿠키가 사용될 사이트를 지정한다.
+  - Path : URL 디렉토리 경로를 지정한다.
+- 세션: 서버가 웹으로 접근(request)한 클라이언트를 식별하는 방법
+  - 쿠키-> 클라이언트 저장소에 저장 / 세션 -> 서버 저장소에 저장
+  - 서버에서 세션 ID를 발행하여 관리
+  - 각 클라이언트에게 고유 ID부여
+  - 사용자가 많을 수록 메모리 차지
+
+내 블로그 포스팅[HTTP protocol 쿠키와 세션](https://deep-jin.tistory.com/entry/HTTP-protocol-cookie-session)

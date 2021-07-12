@@ -43,3 +43,7 @@ ref. [Docker Swarm을 이용한 쉽고 빠른 분산 서버 관리](https://subi
 - 롤링 업데이트 (서비스 중단 없이 업데이트 가능)
 
 Ref. [왜 굳이 도커(컨테이너)를 써야 하나요?](https://www.44bits.io/ko/post/why-should-i-use-docker-container)
+
+### 이미지와 컨테이너 차이
+- 도커 컨테이너를 구성하기 위해서 도커 이미지가 필요하다
+Ref. [도커 컨테이너와 이미지란?](https://hoon93.tistory.com/48)

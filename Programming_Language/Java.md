@@ -222,3 +222,79 @@ ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(capacity);
 
 ### Launch4j
 exe파일 만드는 라이브러리
+
+### ? 연산자
+- `a ? b : c`: a가 True면 b 실행, False면 c실헹
+
+### 접근 제한자
+- 객체의 멤버에 대한 접근을 제한할 때 사용하는 것
+
+### HashMap
+![image](https://user-images.githubusercontent.com/30011635/105696777-17b53380-5f47-11eb-93b0-f950f84a2e11.png)
+```
+HashMap<String,String> map1 = new HashMap<String,String>();//HashMap생성
+HashMap<String,String> map2 = new HashMap<>();//new에서 타입 파라미터 생략가능
+HashMap<String,String> map3 = new HashMap<>(map1);//map1의 모든 값을 가진 HashMap생성
+HashMap<String,String> map4 = new HashMap<>(10);//초기 용량(capacity)지정
+HashMap<String,String> map5 = new HashMap<>(10, 0.7f);//초기 capacity,load factor지정
+HashMap<String,String> map6 = new HashMap<String,String>(){{//초기값 지정
+    put("a","b");
+}};
+```
+
+### What is difference between Selenium and Jsoup in JAVA
+- 일단 알아둘 것 -> 백그라운드에서 HTTP Request/Response가 이루어지며, Request를 던졌을 때 웹 서버에서 응답한 결과를 받아온다. 따라서 서버사이드 렌더링(SSR)을 사용하는 웹 사이트는 서버에서 렌더링을 한 후 화면을 그리기 때문에 크롤링이 가능하지만, 클라이언트 사이드 렌더링(CSR)을 사용하는 웹 사이트는 최소한의 페이지만 서버에서 렌더링하고 클라이언트(브라우저)에서 화면을 그리기 때문에 HTTP Request로 실제 브라우저에서 보여지는 화면을 스크랩 할 수 없다. 
+- Selenium
+  - 웹 어플리케이션 자동화 툴, 현재 브라우저에 출력된 페이지 소스를 파싱할 수 있다
+  - xPath 지원
+  - CRS 사용한 웹사이트 크롤링 가능
+  - 속도 느림 (브라우저가 렌더링 된 후 페이지를 파싱하기 때문에)
+- Jsoup
+  - 서버사이드 렌더링 웹사이트만 크롤링 가능함. CRS 불가. 뭐, 불가는 아니지만 한계가 있음.
+  - xPath 지원 안 함
+  - 속도 빠름 
+  - Click event 지원 안 함
+  - text()와 ownText()의 차이
+    - text(): 원하는 노드의 텍스트 노드를 읽을 수 있다. Gets the normalized, combined text of this element and all its children. Whitespace is normalized and trimmed.
+    - ownText(): 요소의 직계 자손인 텍스트 노드에서만 값을 추출한다. Gets the (normalized) text owned by this element only; does not get the combined text of all children.
+    - ref) [Jsoup 공식 문서.. 예시 잘 나와있음](https://jsoup.org/apidocs/org/jsoup/nodes/Element.html#text())
+
+el#id ☞ id로 가지고 오기
+el.class ☞ class로 가지고 오기
+el[attr] ☞ attribute로 가지고 오기
+parent > child ☞ parent 바로 밑의 자식 노드를 가지고 오기
+#### 결론: Selenium은 Jsoup의 몇 가지 단점을 커버하지만, 동적 웹페이지가 아니라면 Jsoup을 이용하는 것이 낫다. 셀레니움 느리니까. (실무에서도 경험한 부분)
+
+### Java Collection Cheat Sheet
+![image](https://user-images.githubusercontent.com/30011635/114990935-fcb5e800-9ed3-11eb-81cf-d9e03259064f.png)
+[아무리 공부해도 모자를 java collection에 대해 되게 잘 정리해둔 포스팅](http://blog.breakingthat.com/category/java/collection/)
+
+### Thread-safe란?
+- Multi thread 프로그래밍에서 여러 Thread로부터 어떤 method, object, variable에 "동시에" 접근이 이뤄져도 프로그램 실행에 문제가 없음
+- 하나의 function이 한 thread로 부터 호출 되어 수행중일 때, 동시에 다른 thread가 해당 method에 접근 해도 올바른 결과물이 출력 됨
+
+### 자바의 동기화
+- 여러개의 쓰레드가 공유자원에 접근해서 경쟁할 때 공유되는 데이터의 정합성(?)을 해결해줌
+
+### 캐시의 대전제
+- 최근에 쓰인 데이터는 금방 다시 쓰일 가능성이 높다. 그래서 캐시디비 등등..
+
+### Map 과 Set
+- 사실 Map에 같은 key값으로 put 하면 그 자체로 set
+
+### JAVA Collection
+- [자바 컬렉션 프레임워크](https://st-lab.tistory.com/142)
+##### Map
+- map은 컬렉션이 아니다. (이유)
+  1. Collection Interface와 Map Interface의 호환성 문제
+     - Collection -> 단일데이터 처리 / Map -> Key, Value가 쌍을 이루어 처리
+  2. Iterable Interface와 Map간의 문제
+     - 반복자로 뱉기 위해서 key와 value중 어느 것을 반복할 것인가? 애매함. <br>
+  <b> 결론: Map이 콜렉션이다? 의미적으로는 맞을 수 있으나 JAVA에서는 Map을 Collection으로 보지 않음 </b>
+  
+### String, StringBuilder, StringBuffer
+[Java에서 String, StringBuilder, StringBuffer의 차이](https://novemberde.github.io/2017/04/15/String_0.html)<br>
+- 주소값
+  - `String` : 새로운 값을 할당할 때마다 주소값이 새로 생성 됨
+  - `StringBuffer` : 주소값을 메모리에 append 하기 때문에 새로 생성되지 x / 멀티쓰레드 환경에서 쓰면 좋음
+  - `StringBuilder` 

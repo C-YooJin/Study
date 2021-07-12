@@ -185,6 +185,32 @@ public String getTitle(){
 - <font color = "red"> <b>엔티티 클래스는 Domain 영역에 들어간다. </b> </font>
 - <b>DTO -> 데이터 전달 객체</b>
 - <b>Entity -> DB 저장 객체</b>
+```
+// Member 엔티티
+@Entity
+@Getter
+@Table(name = "member")
+public class Member{
+
+    // 기본 생성자 protected로 접근 제한(기본 생성자 접근 제한자는 protected 까지 허용
+    //기본 생성자의 접근 제한자를 private으로 걸면, 추후에 Lazy Loading 사용 시 Proxy 관련 예외가 발생)
+    protected Member(){};
+    
+    ...
+}
+
+
+// @NoArgsconstructor 어노테이션을 통한 protected 접근 제어.
+@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+@Table(name = "member")
+public class Member {
+
+}
+```
+일반적으로 @NoArgsConstructor(access = AccessLevel.PROTECTED)를 써줌. croiffle 프로젝트에서도 해당 방식 채택. <br>
+다시 한 번 말하지만 Entity class의 일관성을 유지하기 위함임.
 
 ```
 // 객체의 생성자 설정 (필드가 많을경우 롬복의 @Builder 사용하면 좋다)
@@ -258,9 +284,6 @@ void 회원가입() {
 
 ```
 // BaseTimeEntity 코드
-package com.deepjin.book.springboot.domain.posts;
-
-import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -269,18 +292,23 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
-@Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class BaseTimeEntity {
-
+public class BaseTimeEntity {
     @CreatedDate
     private LocalDateTime createdDate;
 
     @LastModifiedDate
     private LocalDateTime modifiedDate;
-}
 
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public LocalDateTime getModifiedDate() {
+        return modifiedDate;
+    }
+}
 ```
 
 ```
@@ -413,4 +441,24 @@ spring:
 ### @Transactinal 어노테이션
 - INSERT , UPDATE , DELETE 쿼리를 수행 할 때는 트랜잭션을 필수적으로 명시를 해줘야 합니다.
 
+### 웹, MVC패턴에서 Entity class(DAO)와 Dto
+- entity가 있는데 왜 굳이 Dto 클래스를 만들어줘야 되는지??? 
+  - 일단 내가 알기론, Entity 클래스는 말 그대로 DB에 접근하는 낮은 단계에서 의미가 있는 클래스고, view에 데이터를 뿌려주기 위해서는 Dto 클래스가 필요하다. 그리고 이것을 ModelMapper가 연결해준다...???
+- View에서 표현하는 속성값들은 요청에 따라 계속 달라질 수 있는데, 그 때마다 Entity의 속성값들이 변하게 되면 학생이라는 영속성 모델을 표현한 Students 클래스의 순수성이 모호해지게 된다.
+
+### h2-database 초기화
+- 웹개발을 하다가 새로운 프로젝트를 실행시켰는데 h2-console에서 SELECT 해 보니 이 전 프로젝트에서 생성한 컬럼이 그대로 남아있었다. 초기화가 필요하다고 생각했고 찾아 본 결과물 링크 첨부.
+  - [h2-database초기화](https://roeldowney.tistory.com/271)
+
+### 웹소켓
+- [Ref 1. [번역] Spring-WebSocket](https://velog.io/@hanblueblue/%EB%B2%88%EC%97%AD-Spring-4-Spring-WebSocket)
+- [Ref 2. Spring Boot, PostgreSQL을 이용한 RESTful API, WebSocket 구현](https://nashorn.tistory.com/entry/Spring-Boot-PostgreSQL%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-RESTful-API-%EA%B5%AC%ED%98%84)
+
+
+### Dispatcher Servlet
+- Servlet이란: MVC 패턴에서 Controller 역할 담당
+- Dispatcher Servlet: HTTP request가 들어왔을 때 가장 먼저 처리하는 front controller
+- ref. [스프링 MVC - Dispatcher Servlet을 직접 구현해보자](https://velog.io/@ehdrms2034/%EC%8A%A4%ED%94%84%EB%A7%81-MVC-Dispatcher-Servlet%EC%9D%84-%EC%A7%81%EC%A0%91-%EA%B5%AC%ED%98%84%ED%95%B4%EB%B3%B4%EC%9E%90)
+![image](https://user-images.githubusercontent.com/30011635/119789935-764ae800-bf0e-11eb-8c01-c07ae9c828cf.png)
+Dispatcher-Servlet의 처리과정
 
