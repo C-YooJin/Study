@@ -8,3 +8,19 @@
   
   
 ### 영속성 컨텍스트
+- flush: 트랜잭션을 커밋하는 순간, 영속성 컨텍스트에 새로 저징 된 엔티티를 데이터베이스에 반영한다. 
+- `em.find()` 를 호출하면 먼저 1차 캐시에서 엔티티를 찾고, 만약 없으면 DB에서 조회한다.
+  - DB에서 데이터를 조회하는 경우, 조회 된 값을 영속성컨테스트(안에 있는 1차 캐시에)에 저장한다.  
+```
+EntityManager em = emf.createEntityManager();
+EntityTransaction transaction = en.getTransaction();
+// 엔티티 매니저는 데이터 변경 시 트랜잭션을 시작해야 한다.
+transaction.begin(); // [트랜잭션] 시작
+
+em.persist(memberA)
+em.persist(memberB)
+// 여기까지 INSERT SQL을 데이터베이스에 보내지 않았다.
+
+transaction.commit();
+// 커밋하는 순간 데이터베이스에 INSERT SQL을 보낸다.
+```
