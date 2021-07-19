@@ -67,3 +67,5 @@
 2. 서버가 사용자 인증을 마치면 jwt 토큰을 사용자에게 전달한다.
 3. 이 다음부터는 사용자가 서버에 리소스를 요청할 때 마다 (즉, HTTP request 할 때 마다) 헤더에 jwt값을 넣어서 요청을 보낸다.
 4. 이를 전달 받은 서버는 jwt를 통해 사용자를 인증하고, 리소스를 전달한다. 
+
+[Ref 1. JWT & Spring Security](https://brunch.co.kr/@springboot/491)
