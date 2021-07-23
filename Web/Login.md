@@ -1,3 +1,15 @@
+### RSA, public key cryptosystem
+- 공개키 (puclic key)
+- 개인키 (private key)
+- 공개키 --> 개인키 (암호화)
+- 개인키 --> 공개키 (전자서명)
+- 기본적으로 A와 B가 있다고 가정할 때, A->B로 문서를 전달한다고 하면, B의 공개키로 문서를 잠근다. (그럼 B가 본인의 개인키로 열어볼 수 있음)
+- 또한, A->B로 문서 전달시, A의 개인키로 문서를 잠그면 B는 A의 공개키로 문서를 열어볼 수 있다.
+- 좀 더 응용해서 A->B로 문서 전달시, 1차적으로 B의 공개키로 문서를 잠그고, 그 문서를 A의 개인키로 또 다시 잠글 수 있다. 이런 상황에서 B가 해야 될 일은
+  - 첫 번째, A의 공개키로 열어본다 (열리지 않을시 인증되지 않은 문서이기 때문에 버리면 됨) <b> [인증] </b>
+  - 두 번째, B의 개인키로 열어본다  <b> [암호화] </b>
+    - 이 상황은 인증과 암호화를 모두 거친 RSA다.
+
 ### [웹 기준] 로그인, 회원가입 구현할 때 Spring security와 firebase중 어떤 걸 쓰는 게 더 좋을까? 에서 시작 된 스터디
 - [Firebase Authentication vs. Spring Security](https://stackshare.io/stackups/firebase-authentication-vs-spring-security)
 - Firebase와 Spring Security 둘 다 "User Management and Authentication tool" 임
