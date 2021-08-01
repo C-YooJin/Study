@@ -30,3 +30,8 @@
 - 더이상 Leader가 될 수 있는 Replica가 없는 경우, Read/Write가 멈추는 것은 당연하다. 다만, 복구될 때 대응 방법이 나눠어 진다.
 - 마지막까지 leader였던 broker1번이 up이 되고 다시 leader가 될 때까지 기다린다.(모든 데이터를 가지고 있을 가능성이 높다)
 - ISR과 상관없이 누구라도 가장 빨리 up이 되는 topic이 leader가 된다.(데이터 손실이 되더라도 장애 대응이 빠르다)
+
+### 하나의 컨슈머 그룹에 있는 여러개의 컨슈머가 같은 토픽을 구독할 수 있는가?
+- 가능하다. 다만 각 컨슈머별로 소유권을 가진 파티션을 구독할 수 있다. 
+![image](https://user-images.githubusercontent.com/30011635/127764669-8ec1aedb-a0e2-4918-a37a-92dcc7f79c6f.png)
+
