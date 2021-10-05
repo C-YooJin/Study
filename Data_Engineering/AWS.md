@@ -10,4 +10,8 @@
 Ref) [AWS IAM: IAM Policy 알아보기 (이론편)](https://musma.github.io/2019/11/05/about-aws-iam-policy.html)
 
 
-ddd
+
+
+### AWS Aurora
+#### AWS가 MySQL 및 Postgresql을 호환해서 만든 RDBMS
+- [RDS MySQL과 AWS Aurora의 큰 차이점](https://notemusic.tistory.com/69)
