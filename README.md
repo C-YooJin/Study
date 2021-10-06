@@ -9,6 +9,7 @@
   - Linux
 - [Data Analysis](https://github.com/C-YooJin/Study/tree/master/Data_Analysis)
   - Statistic
+  - Recommemdation
   - preprocessing
   - etc
 - [Network](https://github.com/C-YooJin/Study/tree/master/Network)
@@ -29,9 +30,12 @@
   - OOP
   - typescript
 - [Data Engineering](https://github.com/C-YooJin/Study/tree/master/Data_Engineering)
+  - AWS
+  - DataBase
   - Elastic Search
   - Kafka
   - Hadoop (Sqoop)
+  - 범용적인 지식
 - [Container](https://github.com/C-YooJin/Study/tree/master/Container)
   - Docker_Swarm
 - [Web](https://github.com/C-YooJin/Study/tree/master/Web)
