@@ -34,3 +34,8 @@ set hive.exec.max.dynamic.partitions.pernode=100;
 
 #### (2) 정적 파티션(static partition)
 테이블에 데이터를 입력하는 시점에 파티션 정보를 전달하기 때문에 입력되는 파티션을 알 수 있다.
+
+### Spark dataframe `cache()` `persist()`
+- 한 번 로드 된 데이터를 저장공간에 올려놓는다.
+- `cache()` 말고 `persist()`를 사용하면 스토리지 레벨 파라미터(storage level parameter)를 직접 특정해줄 수 있나보다.
+  - `MEMORY_AND_DISK, MEMORY_ONLY, DISK_ONLY` 같은게 있다. 디폴트는 <b>MEMORY_AND_DISK</b>다.        
