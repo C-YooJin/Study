@@ -39,3 +39,4 @@ set hive.exec.max.dynamic.partitions.pernode=100;
 - 한 번 로드 된 데이터를 저장공간에 올려놓는다.
 - `cache()` 말고 `persist()`를 사용하면 스토리지 레벨 파라미터(storage level parameter)를 직접 특정해줄 수 있나보다.
   - `MEMORY_AND_DISK, MEMORY_ONLY, DISK_ONLY` 같은게 있다. 디폴트는 <b>MEMORY_AND_DISK</b>다.        
+- [Ref. [Apache Spark] RDD 재사용을 위한 persist, cache, checkpointing](https://jaemunbro.medium.com/apache-spark-rdd-%EC%9E%AC%EC%82%AC%EC%9A%A9%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%98%81%EC%86%8D%ED%99%94-persist-cache-checkpoint-12c121dac8b6)
