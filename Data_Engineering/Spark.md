@@ -38,5 +38,15 @@ set hive.exec.max.dynamic.partitions.pernode=100;
 ### Spark dataframe `cache()` `persist()`
 - 한 번 로드 된 데이터를 저장공간에 올려놓는다.
 - `cache()` 말고 `persist()`를 사용하면 스토리지 레벨 파라미터(storage level parameter)를 직접 특정해줄 수 있나보다.
-  - `MEMORY_AND_DISK, MEMORY_ONLY, DISK_ONLY` 같은게 있다. 디폴트는 <b>MEMORY_AND_DISK</b>다.        
-- [Ref. [Apache Spark] RDD 재사용을 위한 persist, cache, checkpointing](https://jaemunbro.medium.com/apache-spark-rdd-%EC%9E%AC%EC%82%AC%EC%9A%A9%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%98%81%EC%86%8D%ED%99%94-persist-cache-checkpoint-12c121dac8b6)
+  - `MEMORY_AND_DISK, MEMORY_ONLY, DISK_ONLY` 같은게 있다. 디폴트는 <b>MEMORY_ONLY</b>다.        
+- [Ref1. [Apache Spark] RDD 재사용을 위한 persist, cache, checkpointing](https://jaemunbro.medium.com/apache-spark-rdd-%EC%9E%AC%EC%82%AC%EC%9A%A9%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%98%81%EC%86%8D%ED%99%94-persist-cache-checkpoint-12c121dac8b6)
+- [Ref2. Spark 공식 docs](http://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-persistence)
+- 공식 문서에 의하면
+  - 스파크 RDD를 메모리에 저장해두고 reuse 하면 연산 속도도 빠르고 효율적임. 
+  - `cache()`는 보통 이폴트 스토리지 레벨을 사용하는데, `StorageLevel.MEMORY_ONLY`임.
+  - 스파크는 `shuffle(예를들어 reduceByKey)`하는 과정에서 자동으로 중간 데이터를 저장해둔다. persist()같은 함수를 호출하지 않아도 자동으로 ㅇㅇ. 이것은 노드가 셔플링하다가 실패했을 경우 모든 인풋 데이터를 다 재연산하지 않게 하기 위함이다. 우리는 여전히 `persist`를 호출하는 것을 권장한다. 
+##### Removing Data 
+- 스파크는 자동으로 캐시를 모니터링하고 LRU 기법으로 오래된 데이터를 drop한다. 
+  - 스파크는 메모리나 디스크에 저장된 RDD가 더 이상 쓰이지 않더라도 자동으로 영속화가 해제되지는 않는다. `unpersist()`가 호출되거나 메모리나 저장공간의 압박으로 축출(evict)되기 전까지는 애플리케이션이 실행되는 동안 메모리에 남아있게 된다. 그래서 LRU 방식이 어떤 것이냐? LRU 캐싱은 쓰인 지 가장 오래된 자료 구조를 빼도록 동작한다. 하지만 지연 평가가 되는 특성 때문에 어떤 파티션이 가장 먼저 축출될지 예측하는 것은 약간 편법이 필요하다. 
+- 직접 캐시에 저장된 RDD를 삭제하고 싶다면 `RDD.unpersist()`를 호출하면 된다.
+- 
